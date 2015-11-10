@@ -1,0 +1,7 @@
+<ul class="list-group heroes">
+  <li *ng-for="#hero of heroes" class="list-group-item"
+    [ng-class]="getSelectedClass(hero)">
+      <span class="label label-default label-pill pull-left">{{hero.id}} </span>
+      <a [router-link]="['../Detail', { id: hero.id }]">{{hero.name}}</a>
+  </li>
+</ul>

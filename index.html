@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <base href="/angular2-bs4-navbar/"/>
+    <title>Angular2 Bootstrap4 Navbar App</title>
+    <script src="system.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.45/angular2.min.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.45/router.dev.min.js"></script>
+	  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.min.css">
+    <style>
+      body { padding-top: 70px; }
+    </style>
+
+    <script>
+      System.config({
+        packages: {'app': {defaultExtension: 'js'}}
+      });
+      System.import('app/bootstrap');
+    </script>
+  </head>
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+</html>
