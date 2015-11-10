@@ -1,0 +1,12 @@
+<div style="margin-left:50px">
+  <div *ng-if="hero">
+    <h4>Details of {{hero.name}}!!</h4>
+    <label>id : {{hero.id}}</label><br>
+    <div class="hero-detail">{{hero.name}}</div>
+  </div>
+  <div *ng-if="!hero">
+    Hero not found!!
+  </div>
+  <br>
+  <button [router-link]=['../List']>Back</button>
+</div>

@@ -1,0 +1,32 @@
+{
+  "name": "angular2-starter",
+  "version": "0.0.1",
+  "description": "An Angular2 application with routing, Child component routing. Gulp as build tool",
+  "main": "bootstrap.js",
+  "scripts": {
+    "tsc": "tsc -p src -w",
+    "start": "live-server --port=8001 --open=build"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "router",
+    "gulp"
+  ],
+  "author": "Sirajuddin Choudhary <sirajuddin.c@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.45",
+    "systemjs": "0.19.2"
+  },
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-run": "^1.6.11",
+    "gulp-util": "^3.0.7",
+    "live-server": "^0.8.2",
+    "typescript": "^1.6.2"
+  }
+}
