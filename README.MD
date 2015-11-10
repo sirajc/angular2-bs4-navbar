@@ -1,10 +1,11 @@
-#Angular2 Starter
-An Angular2 application with routing, Child component routing. Gulp as build tool for html and css. npm's tsc for typescript from gulp
+#Angular2 Bootstrap4 Navbar
+An Angular2 App with Bootstrap4 Navbar and routing using Angular2's Component Router
 
-[DEMO](http://sirajc.github.io/angular2-starter/#/hero/)
+[DEMO](http://sirajc.github.io/angular2-bs4-navbar)
 ##Steps to use
 1. Fork and clone this repository
 1. Run `npm install`
+1. Download bootstrap4, Copy bootstrap.min.css in vendor directory at root level (since bootstrap 4 is not yet available on NPM)
 1. Run `gulp` to start watching html, css and typescript changes
 1. Run `npm start` to start live-server with reload
 
@@ -12,12 +13,8 @@ An Angular2 application with routing, Child component routing. Gulp as build too
 1. Components and Child Components
 1. App Routing and Child Component Routing and linking
 
-##Build Tool Features
-1. Seperate build directory
-1. One command `gulp` to watch css, html and typescript
-1. Gulp uses `npm run tsc` internally so no typescript wrapper for gulp is required
-
 ##TODO
+1. Add Content in DEMO pages
 1. Move to SCSS
 1. Tests
 
@@ -25,7 +22,7 @@ An Angular2 application with routing, Child component routing. Gulp as build too
 
 	The MIT License
 
-	Copyright &copy; 2015 Sirajuddin Choudhary
+	Copyright (c) 2015 Sirajuddin Choudhary
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal

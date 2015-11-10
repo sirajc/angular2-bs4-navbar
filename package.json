@@ -1,7 +1,7 @@
 {
-  "name": "angular2-starter",
+  "name": "angular2-bs4-navbar",
   "version": "0.0.1",
-  "description": "An Angular2 application with routing, Child component routing. Gulp as build tool",
+  "description": "An Angular2 App with Bootstrap4 Navbar and routing using Angular2's Component Router",
   "main": "bootstrap.js",
   "scripts": {
     "tsc": "tsc -p src -w",
@@ -11,7 +11,8 @@
     "angular",
     "angular2",
     "router",
-    "gulp"
+    "gulp",
+    "bootstrap"
   ],
   "author": "Sirajuddin Choudhary <sirajuddin.c@gmail.com>",
   "license": "MIT",
