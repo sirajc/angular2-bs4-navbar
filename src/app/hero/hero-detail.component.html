@@ -1,12 +1,14 @@
-<div style="margin-left:50px">
-  <div *ng-if="hero">
-    <h4>Details of {{hero.name}}!!</h4>
-    <label>id : {{hero.id}}</label><br>
-    <div class="hero-detail">{{hero.name}}</div>
+<div class="hero-detail">
+  <div *ng-if="hero" class="card">
+    <div class="card-block">
+      <h4 class="card-title">{{hero.name}}</h4>
+      <h5 class="card-title">id : {{hero.id}}</h5>
+      <p class="card-text">{{hero.name}}</p>
+    </div>
   </div>
   <div *ng-if="!hero">
     Hero not found!!
   </div>
   <br>
-  <button [router-link]=['../List']>Back</button>
+  <button class="btn btn-primary" [router-link]=['../List']>Back</button>
 </div>

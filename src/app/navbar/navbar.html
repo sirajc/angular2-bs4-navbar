@@ -1,0 +1,18 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li>
+        <a class="navbar-brand" [router-link]="[routes.home.as]">{{routes.home.data.title}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [router-link]="[routes.heroes.as, routes.heroes.data.defaultChildRoute]">{{routes.heroes.data.title}}</a>
+      </li>
+      <li class="nav-item pull-right">
+        <a class="nav-link" [router-link]="[routes.contact.as]">{{routes.contact.data.title}}</a>
+      </li>
+      <li class="nav-item pull-right">
+        <a class="nav-link" [router-link]="[routes.aboutUs.as]">{{routes.aboutUs.data.title}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

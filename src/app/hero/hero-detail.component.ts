@@ -8,8 +8,8 @@ import { HEROES } from './heroes.const';
   templateUrl: 'app/hero/hero-detail.component.html',
   styles: [`
     .hero-detail {
-      font-size: 120%;
-      font-weight: 700;
+      width: 300px;
+      margin-left: 20px;
     }
   `],
   inputs: ['hero'],
@@ -35,5 +35,4 @@ export class HeroDetail {
     });
     return hero;
   }
-
 }

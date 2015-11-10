@@ -1,17 +1,10 @@
 .heroes {
-  list-style: none;
+  width: 300px;
 }
 .heroes li {
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .heroes li:hover {
-  padding-left: 10px;
-}
-.badge {
-  background-color: silver;
-}
-.selected {
-  font-size: 110%;
-  background-color: teal;
+  padding-left: 30px;
 }
