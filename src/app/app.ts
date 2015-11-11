@@ -8,9 +8,7 @@ import {APP_ROUTES} from './route.config';
   selector: 'my-app',
   template: `
     <navbar></navbar>
-    <div class="container-fluid">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
   `,
   styles: [
     `

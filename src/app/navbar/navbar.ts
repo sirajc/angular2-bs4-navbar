@@ -22,6 +22,5 @@ export class Navbar {
 
   constructor() {
     this.routes = Routes;
-    console.log(this.routes);
   }
 }
