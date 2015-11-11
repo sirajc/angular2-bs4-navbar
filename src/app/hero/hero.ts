@@ -11,8 +11,10 @@ export { HEROES } from './heroes.const';
 @Component({
   selector:'hero-component',
   template: `
-    <h2>Marvel Heroes</h2>
-    <router-outlet></router-outlet>
+    <div class="container-fluid">
+      <h2>Marvel Heroes</h2>
+      <router-outlet></router-outlet>
+    </div>
   `,
   directives: [ROUTER_DIRECTIVES]
 })

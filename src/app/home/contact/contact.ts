@@ -2,7 +2,7 @@ import {Component} from 'angular2/angular2';
 
 @Component({
   selector: 'contact',
-  template: 'This is Contact Component'
+  template: '<div class="container-fluid">This is Contact Component</div>'
 })
 export class ContactComponent {
 
