@@ -16,7 +16,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         angular2_1.Component({
             selector: 'home',
-            template: 'This is Home Component'
+            templateUrl: 'app/home/home.html',
+            styleUrls: ['app/home/home.css']
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);

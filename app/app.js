@@ -20,7 +20,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: "\n    <navbar></navbar>\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div>\n  ",
+            template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  ",
             styles: [
                 "\n    "
             ],

@@ -15,7 +15,6 @@ var route_config_1 = require('../route.config');
 var Navbar = (function () {
     function Navbar() {
         this.routes = route_config_1.Routes;
-        console.log(this.routes);
     }
     Navbar = __decorate([
         angular2_1.Component({
