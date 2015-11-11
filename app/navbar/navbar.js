@@ -22,7 +22,7 @@ var Navbar = (function () {
             properties: ['routes'],
             templateUrl: 'app/navbar/navbar.html',
             styles: [
-                "\n    .my-nav {\n      font-weight: 700;\n      font-size: 150%;\n      color: green;\n    }\n    "
+                "\n    .nav-link {\n      color: #eee !important;\n    }\n    "
             ],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
