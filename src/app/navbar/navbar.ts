@@ -8,10 +8,8 @@ import {Routes, APP_ROUTES} from '../route.config';
   templateUrl: 'app/navbar/navbar.html',
   styles: [
     `
-    .my-nav {
-      font-weight: 700;
-      font-size: 150%;
-      color: green;
+    .nav-link {
+      color: #eee !important;
     }
     `
   ],
