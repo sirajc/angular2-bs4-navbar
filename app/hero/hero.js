@@ -27,7 +27,7 @@ var HeroComponent = (function () {
     HeroComponent = __decorate([
         angular2_1.Component({
             selector: 'hero-component',
-            template: "\n    <h2>Marvel Heroes</h2>\n    <router-outlet></router-outlet>\n  ",
+            template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  ",
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([

@@ -16,7 +16,7 @@ var AboutUsComponent = (function () {
     AboutUsComponent = __decorate([
         angular2_1.Component({
             selector: 'about-us',
-            template: 'This is About Us Component'
+            template: '<div class="container-fluid">This is About Us Component</div>'
         }), 
         __metadata('design:paramtypes', [])
     ], AboutUsComponent);

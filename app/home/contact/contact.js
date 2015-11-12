@@ -16,7 +16,7 @@ var ContactComponent = (function () {
     ContactComponent = __decorate([
         angular2_1.Component({
             selector: 'contact',
-            template: 'This is Contact Component'
+            template: '<div class="container-fluid">This is Contact Component</div>'
         }), 
         __metadata('design:paramtypes', [])
     ], ContactComponent);
