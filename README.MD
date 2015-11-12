@@ -14,9 +14,10 @@ An Angular2 App with Bootstrap4 Navbar and routing using Angular2's Component Ro
 1. App Routing and Child Component Routing and linking
 
 ##TODO
-1. Add Content in DEMO pages
-1. Move to SCSS
-1. Tests
+1. [] Add Content in DEMO pages
+1. [] Render Nav based on config similar to dynamic-menu
+1. [] Move to SCSS
+1. [] Tests
 
 ## Copyright and license
 

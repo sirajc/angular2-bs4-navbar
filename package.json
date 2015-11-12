@@ -17,8 +17,8 @@
   "author": "Sirajuddin Choudhary <sirajuddin.c@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "angular2": "2.0.0-alpha.45",
-    "systemjs": "0.19.2"
+    "angular2": "2.0.0-alpha.46",
+    "systemjs": "0.19.5"
   },
   "devDependencies": {
     "del": "^2.0.2",
