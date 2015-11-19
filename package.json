@@ -5,8 +5,16 @@
   "main": "bootstrap.js",
   "scripts": {
     "tsc": "tsc -p src -w",
-    "start": "live-server --port=8001 --open=build"
+    "start": "lite-server --port=8001 --open build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirajc/angular2-bs4-navbar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sirajc/angular2-bs4-navbar/issues"
+  },
+  "homepage": "https://sirajc.github.io/angular2-bs4-navbar",
   "keywords": [
     "angular",
     "angular2",
@@ -26,8 +34,10 @@
     "gulp-load-plugins": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-run": "^1.6.11",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.9.2",
     "gulp-util": "^3.0.7",
-    "live-server": "^0.8.2",
+    "lite-server": "^1.3.1",
     "typescript": "^1.6.2"
   }
 }

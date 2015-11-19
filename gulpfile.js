@@ -44,13 +44,21 @@ gulp.task('html-watcher', function () {
 /**
  * Transpile ts files to js
  */
+var devProject = $.typescript.createProject(config.src + 'tsconfig.json');
+
 gulp.task('tsc', function() {
-  log('Transpiling typescript files');
-  $.run('npm run tsc').exec()
+  log('Transpiling typescript files using gulp');
+  var tsResult = gulp.src(config.ts)
+    .pipe($.sourcemaps.init())
+    .pipe($.typescript(devProject));
+
+  return tsResult.js
+    .pipe($.sourcemaps.write(config.tsMaps))
+    .pipe(gulp.dest(config.build));
 });
 
 gulp.task('ts-watcher', function () {
-  // gulp.watch([config.ts], ['tsc']);
+  gulp.watch([config.ts], ['tsc']);
 });
 
 /**
@@ -70,7 +78,7 @@ gulp.task('build', ['styles', 'html', 'tsc'], function () {
 /**
  * Watch for CSS and Html changes
  */
-gulp.task('default', ['build', 'css-watcher', 'html-watcher'], function() {
+gulp.task('default', ['build', 'css-watcher', 'html-watcher', 'ts-watcher'], function() {
   var msg = {
     title: 'gulp',
     subtitle: 'Watching for HTML, CSS and Typescript changes...'
@@ -83,9 +91,8 @@ gulp.task('default', ['build', 'css-watcher', 'html-watcher'], function() {
  * @param  {Function} done - callback when complete
  */
 gulp.task('clean', function (done) {
-  var delconfig = [].concat(config.build);
-  log('Cleaning: ' + $.util.colors.blue(delconfig));
-  del(delconfig).then(done);
+  var delconfig = [].concat(config.build + '*');
+  clean(delconfig, done);
 });
 
 /**
@@ -130,7 +137,6 @@ gulp.task('clean-code', function (done) {
 function clean(path, done) {
   log('Cleaning: ' + $.util.colors.blue(path));
   del(path).then(function() {
-    log('Cleaned up files');
     if(typeof done === 'function')
       done();
   });
