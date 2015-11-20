@@ -1,6 +1,6 @@
 import {Component} from 'angular2/angular2';
 import {Route, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Routes, APP_ROUTES} from '../route.config';
+import {ROUTE_INFO} from '../routes';
 
 @Component({
   selector: 'navbar',
@@ -19,6 +19,6 @@ export class Navbar {
   public routes;
 
   constructor() {
-    this.routes = Routes;
+    this.routes = ROUTE_INFO;
   }
 }
