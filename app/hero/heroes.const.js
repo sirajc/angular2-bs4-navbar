@@ -1,3 +1,4 @@
+var hero_1 = require('./hero');
 exports.HEROES = [
     { "id": 11, "name": "Iron Man" },
     { "id": 12, "name": "Spider Man" },
@@ -10,4 +11,9 @@ exports.HEROES = [
     { "id": 19, "name": "Wolverine" },
     { "id": 20, "name": "Magneto" }
 ];
+exports.HERO_ROUTES = [
+    { path: '/detail', component: hero_1.HeroDetail, name: 'Detail' },
+    { path: '/', component: hero_1.HeroesComponent, name: 'List' }
+];
+
 //# sourceMappingURL=heroes.const.js.map

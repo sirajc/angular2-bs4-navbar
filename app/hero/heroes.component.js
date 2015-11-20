@@ -13,27 +13,28 @@ var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var hero_detail_component_1 = require('./hero-detail.component');
 var heroes_const_1 = require('./heroes.const');
-var Heroes = (function () {
-    function Heroes() {
+var HeroesComponent = (function () {
+    function HeroesComponent() {
         this.heroes = heroes_const_1.HEROES;
         this.selectedHero = undefined;
     }
-    Heroes.prototype.onSelect = function (hero) {
+    HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
-    Heroes.prototype.getSelectedClass = function (hero) {
+    HeroesComponent.prototype.getSelectedClass = function (hero) {
         return { 'selected': hero === this.selectedHero };
     };
-    Heroes = __decorate([
+    HeroesComponent = __decorate([
         angular2_1.Component({
             selector: 'heroes',
             templateUrl: 'app/hero/heroes.component.html',
             styleUrls: ['app/hero/heroes.component.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES, hero_detail_component_1.HeroDetail, router_1.ROUTER_DIRECTIVES]
+            directives: [hero_detail_component_1.HeroDetail, router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
-    ], Heroes);
-    return Heroes;
+    ], HeroesComponent);
+    return HeroesComponent;
 })();
-exports.Heroes = Heroes;
+exports.HeroesComponent = HeroesComponent;
+
 //# sourceMappingURL=heroes.component.js.map

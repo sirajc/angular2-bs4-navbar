@@ -23,4 +23,5 @@ var ContactComponent = (function () {
     return ContactComponent;
 })();
 exports.ContactComponent = ContactComponent;
+
 //# sourceMappingURL=contact.js.map

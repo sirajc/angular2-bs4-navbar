@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var navbar_1 = require('./navbar/navbar');
-var route_config_1 = require('./route.config');
+var routes_1 = require('./routes');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
@@ -21,15 +21,13 @@ var AppComponent = (function () {
         angular2_1.Component({
             selector: 'my-app',
             template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  ",
-            styles: [
-                "\n    "
-            ],
             directives: [router_1.ROUTER_DIRECTIVES, navbar_1.Navbar]
         }),
-        router_1.RouteConfig(route_config_1.APP_ROUTES), 
+        router_1.RouteConfig(routes_1.ROUTES), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 })();
 exports.AppComponent = AppComponent;
+
 //# sourceMappingURL=app.js.map

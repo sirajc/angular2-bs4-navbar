@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var route_config_1 = require('../route.config');
+var routes_1 = require('../routes');
 var Navbar = (function () {
     function Navbar() {
-        this.routes = route_config_1.Routes;
+        this.routes = routes_1.ROUTE_INFO;
     }
     Navbar = __decorate([
         angular2_1.Component({
@@ -31,4 +31,5 @@ var Navbar = (function () {
     return Navbar;
 })();
 exports.Navbar = Navbar;
+
 //# sourceMappingURL=navbar.js.map

@@ -16,7 +16,7 @@ var heroes_component_1 = require('./heroes.component');
 var hero_model_1 = require('./hero.model');
 exports.Hero = hero_model_1.Hero;
 var heroes_component_2 = require('./heroes.component');
-exports.Heroes = heroes_component_2.Heroes;
+exports.HeroesComponent = heroes_component_2.HeroesComponent;
 var hero_detail_component_2 = require('./hero-detail.component');
 exports.HeroDetail = hero_detail_component_2.HeroDetail;
 var heroes_const_1 = require('./heroes.const');
@@ -31,20 +31,13 @@ var HeroComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([
-            {
-                path: '/detail',
-                as: 'Detail',
-                component: hero_detail_component_1.HeroDetail
-            },
-            {
-                path: '/',
-                as: 'List',
-                component: heroes_component_1.Heroes
-            }
+            { path: '/detail', component: hero_detail_component_1.HeroDetail, name: 'Detail' },
+            { path: '/', component: heroes_component_1.HeroesComponent, name: 'List' }
         ]), 
         __metadata('design:paramtypes', [])
     ], HeroComponent);
     return HeroComponent;
 })();
 exports.HeroComponent = HeroComponent;
+
 //# sourceMappingURL=hero.js.map

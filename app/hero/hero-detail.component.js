@@ -15,15 +15,15 @@ var heroes_const_1 = require('./heroes.const');
 var HeroDetail = (function () {
     function HeroDetail(params) {
         this.params = params;
-        this.id = Number.parseInt(params.get('id'));
-        if (this.id) {
-            this.hero = this.getHero(this.id);
+        this._id = Number.parseInt(params.get('id'));
+        if (this._id) {
+            this.hero = this.getHero(this._id);
         }
     }
-    HeroDetail.prototype.getHero = function (id) {
+    HeroDetail.prototype.getHero = function (_id) {
         var hero;
         heroes_const_1.HEROES.forEach(function (element) {
-            if (element.id === id) {
+            if (element.id === _id) {
                 hero = element;
             }
         });
@@ -35,11 +35,12 @@ var HeroDetail = (function () {
             templateUrl: 'app/hero/hero-detail.component.html',
             styles: ["\n    .hero-detail {\n      width: 300px;\n      margin-left: 20px;\n    }\n  "],
             inputs: ['hero'],
-            directives: [angular2_1.NgIf, router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [router_1.RouteParams])
     ], HeroDetail);
     return HeroDetail;
 })();
 exports.HeroDetail = HeroDetail;
+
 //# sourceMappingURL=hero-detail.component.js.map

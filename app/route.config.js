@@ -10,4 +10,5 @@ exports.Routes = {
     contact: new router_1.Route({ path: '/contact', component: contact_1.ContactComponent, name: 'Contact', data: { title: 'Contact' } })
 };
 exports.APP_ROUTES = Object.keys(exports.Routes).map(function (r) { return exports.Routes[r]; });
+
 //# sourceMappingURL=route.config.js.map
