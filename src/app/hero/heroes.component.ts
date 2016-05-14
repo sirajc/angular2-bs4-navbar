@@ -1,7 +1,7 @@
-import {Component} from 'angular2/angular2';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Hero} from './hero.model.ts';
-import {HeroDetail} from './hero-detail.component';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Hero } from './hero.model.ts';
+import { HeroDetail } from './hero-detail.component';
 import { HEROES } from './heroes.const';
 
 @Component({

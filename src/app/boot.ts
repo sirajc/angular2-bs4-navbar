@@ -1,5 +1,5 @@
-import {bootstrap} from 'angular2/angular2';
-import {ROUTER_PROVIDERS} from 'angular2/router';
-import {AppComponent} from './app';
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { ROUTER_PROVIDERS } from '@angular/router';
+import { AppComponent } from './app';
 
-bootstrap(AppComponent, [ ROUTER_PROVIDERS ]);
+bootstrap( AppComponent, [ ROUTER_PROVIDERS ] );

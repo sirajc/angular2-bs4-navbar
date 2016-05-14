@@ -1,0 +1,7 @@
+{
+  "server": {
+    "baseDir": ["./", "./build"],
+    "directory": true
+  },
+  "files": ["./build/**/*.{html,htm,css,js}", "./node_modules/**/*.*"]
+}

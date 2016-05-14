@@ -1,6 +1,6 @@
-import {Component} from 'angular2/angular2';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Hero} from './hero.model';
+import { Component } from '@angular/core';
+import { Router, ROUTER_DIRECTIVES, RouteSegment } from '@angular/router';
+import { Hero } from './hero.model';
 import { HEROES } from './heroes.const';
 
 @Component({
@@ -19,8 +19,8 @@ export class HeroDetail {
   public hero: Hero;
   private _id: number;
 
-  constructor(private params: RouteParams) {
-    this._id = Number.parseInt(params.get('id'));
+  constructor(private current: RouteSegment, public router : Router) {
+    this._id = Number(current.getParam('id'));
     if(this._id) {
       this.hero = this.getHero(this._id);
     }
@@ -34,5 +34,9 @@ export class HeroDetail {
       }
     });
     return hero;
+  }
+
+  public gotoHeroes() {
+    this.router.navigate(['/heroes']);
   }
 }

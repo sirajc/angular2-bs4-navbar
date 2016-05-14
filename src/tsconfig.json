@@ -1,12 +1,19 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
+    "declaration": false,
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "outDir": "../build/app"
-  }
+  },
+  "files": [
+    "main.ts",
+    "typings.d.ts"
+  ]
 }

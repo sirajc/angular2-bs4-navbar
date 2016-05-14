@@ -1,6 +1,6 @@
-import {Component} from 'angular2/angular2';
-import {Route, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ROUTE_INFO} from '../routes';
+import { Component, Output } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTE_INFO } from '../routes';
 
 @Component({
   selector: 'navbar',

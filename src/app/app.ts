@@ -1,8 +1,7 @@
-import {Component} from 'angular2/angular2';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {HeroComponent} from './hero/hero';
-import {Navbar} from './navbar/navbar';
-import {ROUTES} from './routes';
+import { Component } from '@angular/core';
+import { Routes , ROUTER_DIRECTIVES} from '@angular/router';
+import { Navbar } from './navbar/navbar';
+import { ROUTES } from './routes';
 
 @Component({
   selector: 'my-app',
@@ -10,9 +9,10 @@ import {ROUTES} from './routes';
     <navbar></navbar>
     <router-outlet></router-outlet>
   `,
-  directives: [ROUTER_DIRECTIVES, Navbar]
+  directives: [ Navbar, ROUTER_DIRECTIVES ]
+
 })
-@RouteConfig(ROUTES)
+@Routes(ROUTES)
 export class AppComponent {
-  public title = 'Tour of Heroes';
+  public title = 'Angular2 Bootstrap4 Navbar';
 }

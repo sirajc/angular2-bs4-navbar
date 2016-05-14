@@ -1,6 +1,4 @@
-import { RouteDefinition } from 'angular2/router';
 import { Hero } from './hero.model';
-import { HeroDetail, HeroesComponent } from './hero';
 
 export const HEROES: Hero[] = [
   { "id": 11, "name": "Iron Man" },
@@ -14,8 +12,3 @@ export const HEROES: Hero[] = [
   { "id": 19, "name": "Wolverine" },
   { "id": 20, "name": "Magneto" }
 ];
-
-export const HERO_ROUTES: RouteDefinition[] = [
-  { path: '/detail', component: HeroDetail, name: 'Detail' },
-  { path: '/', component: HeroesComponent, name: 'List' }
-]
