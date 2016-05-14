@@ -2,17 +2,8 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li>
-        <a class="navbar-brand" [routerLink]="[routes.home.path]">{{routes.home.title}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[routes.heroes.path]">{{routes.heroes.title}}</a>
-      </li>
-      <li class="nav-item pull-xs-right">
-        <a class="nav-link" [routerLink]="[routes.contact.path]">{{routes.contact.title}}</a>
-      </li>
-      <li class="nav-item pull-xs-right">
-        <a class="nav-link" [routerLink]="[routes.about.path]">{{routes.about.title}}</a>
+      <li *ngFor="let menuItem of menuItems" [ngClass]="getMenuItemClasses(menuItem)">
+        <a [routerLink]="[menuItem.path]" [ngClass]="getMenuItemAnchorClasses(menuItem)">{{menuItem.title}}</a>
       </li>
     </ul>
   </div>

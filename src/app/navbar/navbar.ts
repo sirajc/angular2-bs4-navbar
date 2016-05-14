@@ -1,6 +1,6 @@
 import { Component, Output } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { ROUTE_INFO } from '../routes';
+import { ROUTES, MenuType, RouteInfo } from '../routes';
 
 @Component({
   selector: 'navbar',
@@ -16,9 +16,25 @@ import { ROUTE_INFO } from '../routes';
   directives: [ROUTER_DIRECTIVES]
 })
 export class Navbar {
-  public routes;
+  public menuItems: RouteInfo[];
 
   constructor() {
-    this.routes = ROUTE_INFO;
+    this.menuItems = ROUTES;
+  }
+
+  public getMenuItemClasses(menuItem: RouteInfo) {
+    let menuItemClass = {
+      "nav-item": menuItem.menuType === MenuType.LEFT || menuItem.menuType === MenuType.RIGHT,
+      "pull-xs-right": menuItem.menuType === MenuType.RIGHT
+    }
+    return menuItemClass;
+  }
+
+  public getMenuItemAnchorClasses(menuItem: RouteInfo) {
+    let menuItemAnchorClass = {
+      "navbar-brand": menuItem.menuType === MenuType.BRAND,
+      "nav-link": menuItem.menuType === MenuType.LEFT || menuItem.menuType === MenuType.RIGHT
+    }
+    return menuItemAnchorClass;
   }
 }
