@@ -1,17 +1,34 @@
 #Angular2 Bootstrap4 Navbar
-An Angular2 App with Bootstrap4 Navbar and routing using Angular2's Component Router
+An Angular2 App with Bootstrap4 Navbar and routing using Angular2's New Router. Navbar menu is fully configurable in TS files.
+Configuration is shared between Angular and Bootstrap Navbar
 
 [DEMO](http://sirajc.github.io/angular2-bs4-navbar)
 ##Steps to use
 1. Fork and clone this repository
 1. Run `npm install`
-1. Download bootstrap4, Copy bootstrap.min.css in vendor directory at root level (since bootstrap 4 is not yet available on NPM)
 1. Run `gulp` to start watching html, css and typescript changes
 1. Run `npm start` to start live-server with reload
 
 ##Angular2 Features
 1. Components and Child Components
-1. App Routing and Child Component Routing and linking
+1. App Routing and Child Component Routing
+1. Usage of Router Directives and functions like `routerLink` and `router.navigate`
+1. Usage of Angular directives like `ngClass`, `ngFor`, `ngStyle`
+
+##Router and Navbar Configuration
+Bootstrap Navbar and corresponding Angular routes are configured using one single object in `app/routes.ts` file eg.
+```typescript
+		export const ROUTES: RouteInfo[] = [
+			{ path: '/', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
+			{ path: '/heroes', component: HeroComponent, title: "Heroes", menuType: MenuType.LEFT },
+			{ path: '/about', component: AboutUsComponent, title: "About Us", menuType: MenuType.RIGHT },
+			{ path: '/contact', component: ContactComponent, title: "Contact", menuType: MenuType.RIGHT }
+		]
+```
+* `path` and `component` is used by Angular to set Routes
+* `path` is used by Angular to set routerLink in Nav Item of Bootsrap
+* `title` is what is shown on Navbar for particular Nav Item
+* `menuType` can be `LEFT`, `RIGHT` and `BRAND`, based on this value the Menu Item is placed accordingly on the Navbar
 
 ##TODO
 - [ ] Add Content in DEMO pages
@@ -23,7 +40,7 @@ An Angular2 App with Bootstrap4 Navbar and routing using Angular2's Component Ro
 
 	The MIT License
 
-	Copyright (c) 2015 Sirajuddin Choudhary
+	Copyright (c) 2015-2016 Sirajuddin Choudhary
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
