@@ -1,21 +1,21 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
-    switch (arguments.length) {
-        case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
-        case 3: return decorators.reduceRight(function(o, d) { return (d && d(target, key)), void 0; }, void 0);
-        case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
-    }
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
-var router_1 = require('angular2/router');
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var heroes_const_1 = require('./heroes.const');
 var HeroDetail = (function () {
-    function HeroDetail(params) {
-        this.params = params;
-        this._id = Number.parseInt(params.get('id'));
+    function HeroDetail(current, router) {
+        this.current = current;
+        this.router = router;
+        this._id = Number(current.getParam('id'));
         if (this._id) {
             this.hero = this.getHero(this._id);
         }
@@ -29,18 +29,21 @@ var HeroDetail = (function () {
         });
         return hero;
     };
+    HeroDetail.prototype.gotoHeroes = function () {
+        this.router.navigate(['/heroes']);
+    };
     HeroDetail = __decorate([
-        angular2_1.Component({
+        core_1.Component({
             selector: 'hero-detail',
             templateUrl: 'app/hero/hero-detail.component.html',
             styles: ["\n    .hero-detail {\n      width: 300px;\n      margin-left: 20px;\n    }\n  "],
             inputs: ['hero'],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [router_1.RouteParams])
+        __metadata('design:paramtypes', [router_1.RouteSegment, router_1.Router])
     ], HeroDetail);
     return HeroDetail;
-})();
+}());
 exports.HeroDetail = HeroDetail;
 
 //# sourceMappingURL=hero-detail.component.js.map

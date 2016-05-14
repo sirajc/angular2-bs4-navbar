@@ -1,18 +1,20 @@
+<div>
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li>
-        <a class="navbar-brand" [router-link]="[routes.home.name]">{{routes.home.title}}</a>
+        <a class="navbar-brand" [routerLink]="[routes.home.path]">{{routes.home.title}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [router-link]="[routes.heroes.name, routes.heroes.defaultChildRoute]">{{routes.heroes.title}}</a>
+        <a class="nav-link" [routerLink]="[routes.heroes.path]">{{routes.heroes.title}}</a>
       </li>
       <li class="nav-item pull-right">
-        <a class="nav-link" [router-link]="[routes.contact.name]">{{routes.contact.title}}</a>
+        <a class="nav-link" [routerLink]="[routes.contact.path]">{{routes.contact.title}}</a>
       </li>
       <li class="nav-item pull-right">
-        <a class="nav-link" [router-link]="[routes.aboutUs.name]">{{routes.aboutUs.title}}</a>
+        <a class="nav-link" [routerLink]="[routes.about.path]">{{routes.about.title}}</a>
       </li>
     </ul>
   </div>
 </nav>
+</div>

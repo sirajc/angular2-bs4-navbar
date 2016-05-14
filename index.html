@@ -2,28 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <base href="/angular2-bs4-navbar/"/>
     <title>Angular2 Bootstrap4 Navbar App</title>
-    <script src="system.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.46/angular2.min.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.46/router.js"></script>
-	  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://npmcdn.com/es6-shim@0.35.0/es6-shim.min.js"></script>
+    <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+    <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
+    <link href="https://npmcdn.com/bootstrap@4.0.0-alpha.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       body { padding-top: 70px; }
     </style>
 
     <script>
-      System.config({
-        packages: {'app': {defaultExtension: 'js'}}
+
+      // Following config is picked up from plunkr provided by Getting Started of angular.io
+
+      var ngVer = '@2.0.0-rc.1'; // lock in the angular package version; do not let it float to current!
+
+        //map tells the System loader where to look for things
+        var  map = {
+          'app':                        'app',
+
+          '@angular':                   'https://npmcdn.com/@angular',
+          'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
+          'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6'
+      };
+
+      //packages tells the System loader how to load when no filename and/or no extension
+      var packages = {
+        'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
+        'rxjs':                       { defaultExtension: 'js' },
+        'angular2-in-memory-web-api': { defaultExtension: 'js' },
+      };
+
+      var ngPackageNames = [
+        'common',
+        'compiler',
+        'core',
+        // 'http',
+        'platform-browser',
+        'platform-browser-dynamic',
+        'router',
+        // 'router-deprecated',
+        // 'upgrade',
+      ];
+
+      // Add map entries for each angular package
+      // only because we're pinning the version with `ngVer`.
+      ngPackageNames.forEach(function(pkgName) {
+        map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
       });
 
-      System.import('app/bootio');
+      // Add package entries for angular packages
+      ngPackageNames.forEach(function(pkgName) {
+
+        // Bundled (~40 requests):
+        packages['@angular/'+pkgName] = { main: pkgName + '.umd.js', defaultExtension: 'js' };
+
+        // Individual files (~300 requests):
+        //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+      });
+
+      var config = {
+        map: map,
+        packages: packages
+      };
+
+      System.config(config);
+
+      System.import('app/boot');
     </script>
   </head>
   <body>
-    <my-app>Loading.....</my-app>
+    <my-app>Angular2 Bootstrap4 with Nav Bar... <br /><br /><br />Loading App</my-app>
   </body>
 </html>
