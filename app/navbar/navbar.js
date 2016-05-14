@@ -13,8 +13,22 @@ var router_1 = require('@angular/router');
 var routes_1 = require('../routes');
 var Navbar = (function () {
     function Navbar() {
-        this.routes = routes_1.ROUTE_INFO;
+        this.menuItems = routes_1.ROUTES;
     }
+    Navbar.prototype.getMenuItemClasses = function (menuItem) {
+        var menuItemClass = {
+            "nav-item": menuItem.menuType === routes_1.MenuType.LEFT || menuItem.menuType === routes_1.MenuType.RIGHT,
+            "pull-xs-right": menuItem.menuType === routes_1.MenuType.RIGHT
+        };
+        return menuItemClass;
+    };
+    Navbar.prototype.getMenuItemAnchorClasses = function (menuItem) {
+        var menuItemAnchorClass = {
+            "navbar-brand": menuItem.menuType === routes_1.MenuType.BRAND,
+            "nav-link": menuItem.menuType === routes_1.MenuType.LEFT || menuItem.menuType === routes_1.MenuType.RIGHT
+        };
+        return menuItemAnchorClass;
+    };
     Navbar = __decorate([
         core_1.Component({
             selector: 'navbar',
