@@ -143,6 +143,27 @@ function clean(path, done) {
 }
 
 /**
+ * Clean the files in io-gh-pages and write new ones
+ * @param  {Function} done - callback when complete
+ */
+gulp.task('gh-pages', function (done) {
+  var files = [].concat(
+    config.ghPages + 'app/**/*.js',
+    config.ghPages + 'app/**/*.html'
+    );
+  clean(files, done);
+
+  files = [].concat(
+    config.build + "app/**/*.js",
+    config.build + "app/**/*.html"
+  )
+
+  gulp.src(files)
+    .pipe(gulp.dest(config.ghPages+"app"))
+});
+
+
+/**
  * Log a message or series of messages using chalk's blue color.
  * Can pass in a string, object or array.
  */
