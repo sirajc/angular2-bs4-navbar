@@ -2,6 +2,9 @@
 An Angular2 App with Bootstrap4 Navbar and routing using Angular2's New Router. Navbar menu is fully configurable in TS files.
 Configuration is shared between Angular and Bootstrap Navbar
 
+##Update
+A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for-routing-in.html) i.e. __router v3.0__ has been announced by Angular team. Will refactor this project soon to use router v3. See #1
+
 [DEMO](http://sirajc.github.io/angular2-bs4-navbar)
 ##Steps to use
 1. Fork and clone this repository
@@ -32,9 +35,19 @@ Bootstrap Navbar and corresponding Angular routes are configured using one singl
 
 ##TODO
 - [ ] Add Content in DEMO pages
-- [ ] Render Nav based on config similar to dynamic-menu
+- [ ] Render Nav based on config similar to `dynamic-menu`
+  - [X] Menu configuration should be controlled in TS file only
+	- [ ] Configuration inside service, instead of Constant
+	- [ ] Get Menu and Route Configuration from HTTP instead of hardcoding
+	- [ ] Active class for Active Routes
+	- [ ] Support for Dropdown Menu
 - [ ] Move to SCSS
 - [ ] Tests
+
+##Contributing
+Create an issue on this repo if something is broken or if a feature is needed
+Feel Free to create a Pull Request if you fixed anything
+In case you want to add a feature, create an issue to disscuss the feature first
 
 ## Copyright and license
 
