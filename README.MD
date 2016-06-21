@@ -1,9 +1,9 @@
 #Angular2 Bootstrap4 Navbar
-An Angular2 App with Bootstrap4 Navbar and routing using Angular2's New Router. Navbar menu is fully configurable in TS files.
+An Angular2 App with Bootstrap4 Navbar and routing using Angular2's New New Router v3.alhpa7. Navbar menu is fully configurable in TS files.
 Configuration is shared between Angular and Bootstrap Navbar
 
 ##Update
-A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for-routing-in.html) i.e. __router v3.0__ has been announced by Angular team. Will refactor this project soon to use router v3. See #1
+A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for-routing-in.html) i.e. __router v3.0__ has been announced by Angular team. This project uses this
 
 [DEMO](http://sirajc.github.io/angular2-bs4-navbar)
 ##Steps to use
@@ -22,16 +22,17 @@ A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for
 Bootstrap Navbar and corresponding Angular routes are configured using one single object in `app/routes.ts` file eg.
 ```typescript
 		export const ROUTES: RouteInfo[] = [
-			{ path: '/', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
-			{ path: '/heroes', component: HeroComponent, title: "Heroes", menuType: MenuType.LEFT },
-			{ path: '/about', component: AboutUsComponent, title: "About Us", menuType: MenuType.RIGHT },
-			{ path: '/contact', component: ContactComponent, title: "Contact", menuType: MenuType.RIGHT }
-		]
+			{ path: '', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
+			{ path: 'heroes', component: HeroComponent, title: "Heroes", menuType: MenuType.LEFT, children: [ ...HERO_ROUTES ] },
+			{ path: 'about', component: AboutUsComponent, title: "About Us", menuType: MenuType.RIGHT },
+			{ path: 'contact', component: ContactComponent, title: "Contact", menuType: MenuType.RIGHT }
+		];
 ```
 * `path` and `component` is used by Angular to set Routes
 * `path` is used by Angular to set routerLink in Nav Item of Bootsrap
 * `title` is what is shown on Navbar for particular Nav Item
 * `menuType` can be `LEFT`, `RIGHT` and `BRAND`, based on this value the Menu Item is placed accordingly on the Navbar
+* `children` is an array Route, added using ES6 spread operator (...)
 
 ##TODO
 - [ ] Add Content in DEMO pages
