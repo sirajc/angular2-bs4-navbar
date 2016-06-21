@@ -15,11 +15,14 @@ var HeroDetail = (function () {
     function HeroDetail(current, router) {
         this.current = current;
         this.router = router;
-        this._id = Number(current.getParam('id'));
-        if (this._id) {
-            this.hero = this.getHero(this._id);
-        }
     }
+    HeroDetail.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.current.params.subscribe(function (params) {
+            var id = +params['id']; // (+) converts string 'id' to a number
+            _this.hero = _this.getHero(id);
+        });
+    };
     HeroDetail.prototype.getHero = function (_id) {
         var hero;
         heroes_const_1.HEROES.forEach(function (element) {
@@ -40,7 +43,7 @@ var HeroDetail = (function () {
             inputs: ['hero'],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [router_1.RouteSegment, router_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], HeroDetail);
     return HeroDetail;
 }());

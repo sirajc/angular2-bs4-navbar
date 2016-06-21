@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var navbar_1 = require('./navbar/navbar');
-var routes_1 = require('./routes');
+var router_service_1 = require('./shared/router.service');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Angular2 Bootstrap4 Navbar';
@@ -20,9 +20,9 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  ",
-            directives: [navbar_1.Navbar, router_1.ROUTER_DIRECTIVES]
-        }),
-        router_1.Routes(routes_1.ROUTES), 
+            directives: [navbar_1.Navbar, router_1.ROUTER_DIRECTIVES],
+            providers: [router_service_1.RouterService]
+        }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;

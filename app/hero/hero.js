@@ -10,14 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_detail_component_1 = require('./hero-detail.component');
-var heroes_component_1 = require('./heroes.component');
 var hero_model_1 = require('./hero.model');
 exports.Hero = hero_model_1.Hero;
-var heroes_component_2 = require('./heroes.component');
-exports.HeroesComponent = heroes_component_2.HeroesComponent;
-var hero_detail_component_2 = require('./hero-detail.component');
-exports.HeroDetail = hero_detail_component_2.HeroDetail;
+var heroes_component_1 = require('./heroes.component');
+exports.HeroesComponent = heroes_component_1.HeroesComponent;
+var hero_detail_component_1 = require('./hero-detail.component');
+exports.HeroDetail = hero_detail_component_1.HeroDetail;
 var heroes_const_1 = require('./heroes.const');
 exports.HEROES = heroes_const_1.HEROES;
 var HeroComponent = (function () {
@@ -28,11 +26,7 @@ var HeroComponent = (function () {
             selector: 'hero-component',
             template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  ",
             directives: [router_1.ROUTER_DIRECTIVES]
-        }),
-        router_1.Routes([
-            { path: '/', component: heroes_component_1.HeroesComponent },
-            { path: '/detail/:id', component: hero_detail_component_1.HeroDetail }
-        ]), 
+        }), 
         __metadata('design:paramtypes', [])
     ], HeroComponent);
     return HeroComponent;

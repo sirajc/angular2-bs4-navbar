@@ -10,22 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var routes_1 = require('../routes');
+var router_metadata_1 = require('../shared/router.metadata');
+var router_service_1 = require('../shared/router.service');
 var Navbar = (function () {
-    function Navbar() {
-        this.menuItems = routes_1.ROUTES;
+    function Navbar(routerService) {
+        this.routerService = routerService;
+        this.menuItems = routerService.getRoutes();
     }
     Navbar.prototype.getMenuItemClasses = function (menuItem) {
         var menuItemClass = {
-            "nav-item": menuItem.menuType === routes_1.MenuType.LEFT || menuItem.menuType === routes_1.MenuType.RIGHT,
-            "pull-xs-right": menuItem.menuType === routes_1.MenuType.RIGHT
+            "nav-item": menuItem.menuType === router_metadata_1.MenuType.LEFT || menuItem.menuType === router_metadata_1.MenuType.RIGHT,
+            "pull-xs-right": menuItem.menuType === router_metadata_1.MenuType.RIGHT
         };
         return menuItemClass;
     };
     Navbar.prototype.getMenuItemAnchorClasses = function (menuItem) {
         var menuItemAnchorClass = {
-            "navbar-brand": menuItem.menuType === routes_1.MenuType.BRAND,
-            "nav-link": menuItem.menuType === routes_1.MenuType.LEFT || menuItem.menuType === routes_1.MenuType.RIGHT
+            "navbar-brand": menuItem.menuType === router_metadata_1.MenuType.BRAND,
+            "nav-link": menuItem.menuType === router_metadata_1.MenuType.LEFT || menuItem.menuType === router_metadata_1.MenuType.RIGHT
         };
         return menuItemAnchorClass;
     };
@@ -39,7 +41,7 @@ var Navbar = (function () {
             ],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_service_1.RouterService])
     ], Navbar);
     return Navbar;
 }());
