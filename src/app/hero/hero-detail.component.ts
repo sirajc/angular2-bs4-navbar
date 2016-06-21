@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES, RouteSegment } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
 import { Hero } from './hero.model';
 import { HEROES } from './heroes.const';
 
@@ -15,15 +15,19 @@ import { HEROES } from './heroes.const';
   inputs: ['hero'],
   directives: [ROUTER_DIRECTIVES]
 })
-export class HeroDetail {
+export class HeroDetail implements OnInit {
   public hero: Hero;
-  private _id: number;
+  private sub: any;
 
-  constructor(private current: RouteSegment, public router : Router) {
-    this._id = Number(current.getParam('id'));
-    if(this._id) {
-      this.hero = this.getHero(this._id);
-    }
+  constructor(private current: ActivatedRoute, public router : Router) {
+
+  }
+
+  ngOnInit() {
+     this.sub = this.current.params.subscribe(params => {
+     let id = +params['id']; // (+) converts string 'id' to a number
+     this.hero = this.getHero(id);
+   });
   }
 
   private getHero(_id: number) : Hero {

@@ -1,6 +1,7 @@
 import { Component, Output } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { ROUTES, MenuType, RouteInfo } from '../routes';
+import { MenuType, RouteInfo } from '../shared/router.metadata';
+import { RouterService } from '../shared/router.service';
 
 @Component({
   selector: 'navbar',
@@ -18,8 +19,8 @@ import { ROUTES, MenuType, RouteInfo } from '../routes';
 export class Navbar {
   public menuItems: RouteInfo[];
 
-  constructor() {
-    this.menuItems = ROUTES;
+  constructor(private routerService : RouterService ) {
+    this.menuItems = routerService.getRoutes();
   }
 
   public getMenuItemClasses(menuItem: RouteInfo) {
