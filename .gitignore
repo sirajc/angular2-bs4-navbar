@@ -3,3 +3,4 @@ node_modules
 build
 io-gh-pages
 src/app/bootio.ts
+build-gh-pages.sh
