@@ -62,9 +62,34 @@ gulp.task('ts-watcher', function () {
 });
 
 /**
+ * Remove all images from the build folder
+ * @param  {Function} done - callback when complete
+ */
+gulp.task('clean-images', function (done) {
+  clean(config.build + 'images/**/*.*', done);
+});
+
+/**
+ * Compress images
+ * @return {Stream}
+ */
+gulp.task('images-dev', function () {
+  log('Copying images');
+
+  return gulp
+    .src(config.images)
+    .pipe($.plumber())
+    .pipe($.directorySync(config.src + config.imagesRoot , config.build + config.imagesRoot, { printSummary: true}));
+});
+
+gulp.task('image-watcher', function () {
+  gulp.watch([config.images], ['images-dev']);
+});
+
+/**
  * Build everything
  */
-gulp.task('build', ['styles', 'html', 'tsc'], function () {
+gulp.task('build', ['styles', 'html', 'tsc', 'images-dev'], function () {
   log('Building everything');
 
   var msg = {
@@ -78,7 +103,7 @@ gulp.task('build', ['styles', 'html', 'tsc'], function () {
 /**
  * Watch for CSS and Html changes
  */
-gulp.task('default', ['build', 'css-watcher', 'html-watcher', 'ts-watcher'], function() {
+gulp.task('default', ['build', 'css-watcher', 'html-watcher', 'ts-watcher', 'image-watcher'], function() {
   var msg = {
     title: 'gulp',
     subtitle: 'Watching for HTML, CSS and Typescript changes...'

@@ -12,6 +12,8 @@ module.exports = function () {
     html: client + '**/*.html',
     css: client + '**/*.css',
     ts: client + '**/*.ts',
+    images: client + 'images/**/*.*',
+    imagesRoot: 'images',
 
     defaultPort: '7203'
   };
