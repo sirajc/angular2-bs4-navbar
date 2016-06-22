@@ -7,48 +7,50 @@
 
     <base href="/build/"/>
     <title>Angular2 Bootstrap4 Navbar App</title>
-    <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="../node_modules/ie-shim/dist/browser.min.js"></script>
+    <script src="../node_modules/core-js/client/shim.min.js"></script>
     <script src="../node_modules/zone.js/dist/zone.js"></script>
     <script src="../node_modules/reflect-metadata/Reflect.js"></script>
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
-    <link rel="stylesheet" href="../vendor/bootstrap.min.css"></head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <style>
       body { padding-top: 70px; }
     </style>
 
     <script>
 
-      var map = {
-        'app':                        'app', // 'dist',
+      //map tells the System loader where to look for things
+      var  map = {
+        'app':                        'app',
+
+        '@angular':                   '../node_modules/@angular', // sufficient if we didn't pin the version
         'rxjs':                       '../node_modules/rxjs',
-        'angular2-in-memory-web-api': '../node_modules/angular2-in-memory-web-api',
-        '@angular':                   '../node_modules/@angular'
       };
 
-      // packages tells the System loader how to load when no filename and/or no extension
+      //packages tells the System loader how to load when no filename and/or no extension
       var packages = {
-        'app':                        { main: 'main.js',  defaultExtension: 'js' },
-        'rxjs':                       { defaultExtension: 'js' },
-        'angular2-in-memory-web-api': { defaultExtension: 'js' },
+        'app':                        { main: 'main',  defaultExtension: 'js' },
+        'rxjs':                       { defaultExtension: 'js' }
       };
 
-      var packageNames = [
-        '@angular/common',
-        '@angular/compiler',
-        '@angular/core',
-        // '@angular/http',
-        '@angular/platform-browser',
-        '@angular/platform-browser-dynamic',
-        '@angular/router',
-        // '@angular/router-deprecated',
-        // '@angular/testing',
-        // '@angular/upgrade',
+      var ngPackageNames = [
+        'common',
+        'compiler',
+        'core',
+        'platform-browser',
+        'platform-browser-dynamic'
       ];
 
-      // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
-      packageNames.forEach(function(pkgName) {
-        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+      // Add package entries for angular packages
+      ngPackageNames.forEach(function(pkgName) {
+        // Bundled (~40 requests):
+        packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+        // Individual files (~300 requests):
+        //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
       });
+
+      // No umd for router yet
+      packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
 
       var config = {
         map: map,
