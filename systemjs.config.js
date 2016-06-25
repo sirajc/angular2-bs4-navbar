@@ -36,7 +36,7 @@
     // 'http',
     'platform-browser',
     'platform-browser-dynamic',
-    'router',
+    // 'router',
     // 'upgrade',
   ];
 
@@ -45,6 +45,8 @@
   ngPackageNames.forEach(function(pkgName) {
     map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
   });
+  
+  map['@angular/router'] = 'https://npmcdn.com/@angular/router' + routerVer;
 
   // Add package entries for angular packages
   ngPackageNames.forEach(function(pkgName) {
