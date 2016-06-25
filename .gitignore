@@ -2,5 +2,3 @@ node_modules
 .vscode
 build
 io-gh-pages
-src/app/bootio.ts
-build-gh-pages.sh
