@@ -6,7 +6,7 @@
 (function(global) {
 
   var ngVer = '@2.0.0-rc.3'; // lock in the angular package version; do not let it float to current!
-  var routerVer = '@3.0.0-alpha.7'; // lock router version
+  var routerVer = '@3.0.0-alpha.8'; // lock router version
   var formsVer = '@0.1.0'; // lock forms version
 
   //map tells the System loader where to look for things
@@ -36,7 +36,7 @@
     // 'http',
     'platform-browser',
     'platform-browser-dynamic',
-    // 'router-deprecated',
+    'router',
     // 'upgrade',
   ];
 
@@ -55,9 +55,6 @@
     // Individual files (~300 requests):
     //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
   });
-
-  // No umd for router yet
-  packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
 
   // Forms not on rc yet
   packages['@angular/forms'] = { main: 'index.js', defaultExtension: 'js' };

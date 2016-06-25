@@ -15,8 +15,10 @@ var router_service_1 = require('../shared/router.service');
 var Navbar = (function () {
     function Navbar(routerService) {
         this.routerService = routerService;
-        this.menuItems = routerService.getRoutes();
     }
+    Navbar.prototype.ngOnInit = function () {
+        this.menuItems = this.routerService.getRoutes().filter(function (menuItem) { return menuItem.menuType != null; });
+    };
     Navbar.prototype.getMenuItemClasses = function (menuItem) {
         var menuItemClass = {
             "nav-item": menuItem.menuType === router_metadata_1.MenuType.LEFT || menuItem.menuType === router_metadata_1.MenuType.RIGHT,
