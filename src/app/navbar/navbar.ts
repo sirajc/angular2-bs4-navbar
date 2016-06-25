@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { MenuType, RouteInfo } from '../shared/router.metadata';
-import { RouterService } from '../shared/router.service';
+import { MenuType, RouteInfo, RouterService } from '../shared';
 
 @Component({
   selector: 'navbar',

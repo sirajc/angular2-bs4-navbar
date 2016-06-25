@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES} from '@angular/router';
 
 import { Navbar } from './navbar/navbar';
-import { RouterService } from './shared/router.service';
+import { RouterService } from './shared';
 
 @Component({
   selector: 'my-app',

@@ -41,7 +41,8 @@ const barrels: string[] = [
   // Thirdparty barrels.
 
   // App specific barrels.
-  'app'
+  'app',
+  'app/shared'
 ];
 
 barrels.forEach((barrelName: string) => {
