@@ -2,11 +2,11 @@ import { provideRouter, RouterConfig } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 import { HeroComponent } from '../hero/hero';
-import { HomeComponent } from '../home/home';
-import { AboutUsComponent } from '../home/about/about';
-import { ContactComponent } from '../home/contact/contact';
-import { RouteInfo, MenuType } from './router.metadata';
 import { HERO_ROUTES } from '../hero/hero.routes';
+import { HomeComponent } from '../home';
+import { AboutUsComponent } from '../home/about';
+import { ContactComponent } from '../home/contact';
+import { RouteInfo, MenuType } from './router.metadata';
 
 export const ROUTES: RouteInfo[] = [
   { path: '', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
