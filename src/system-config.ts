@@ -27,23 +27,23 @@ var ngBarrels = [
 ];
 
 // Add package entries for angular packages
-ngBarrels.forEach(function(pkgName) {
+ngBarrels.forEach(function(ngBarrelName) {
   // Bundled (~40 requests):
-  packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+  packages['@angular/'+ngBarrelName] = { main: '/bundles/' + ngBarrelName + '.umd.js', defaultExtension: 'js' };
   // Individual files (~300 requests):
   //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+// Use bundle for Rxjs
+packages['rxjs'] = { main: '/bundles/Rx.umd.js', defaultExtension: 'js' };
+
 const barrels: string[] = [
   // Thirdparty barrels.
-  'rxjs',
 
   // App specific barrels.
   'app'
 ];
 
-const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
   packages[barrelName] = { main: 'index', defaultExtension: 'js' };
 });
