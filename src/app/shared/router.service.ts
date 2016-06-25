@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { Injectable } from '@angular/core';
 
-import { HeroComponent } from '../hero/hero';
+import { HeroComponent } from '../hero';
 import { HERO_ROUTES } from '../hero/hero.routes';
 import { HomeComponent } from '../home';
 import { AboutUsComponent } from '../home/about';

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
-import { Hero } from './hero.model';
-import { HEROES } from './heroes.const';
+
+import { Hero } from '../hero.model';
+import { HEROES } from '../hero-list/shared';
 
 @Component({
   selector: 'hero-detail',
-  templateUrl: 'app/hero/hero-detail.component.html',
+  templateUrl: 'app/hero/hero-detail/hero-detail.component.html',
   styles: [`
     .hero-detail {
       width: 300px;
