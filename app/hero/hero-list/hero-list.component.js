@@ -10,27 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_model_1 = require('./hero.model');
-exports.Hero = hero_model_1.Hero;
-var heroes_component_1 = require('./heroes.component');
-exports.HeroesComponent = heroes_component_1.HeroesComponent;
-var hero_detail_component_1 = require('./hero-detail.component');
-exports.HeroDetail = hero_detail_component_1.HeroDetail;
-var heroes_const_1 = require('./heroes.const');
-exports.HEROES = heroes_const_1.HEROES;
-var HeroComponent = (function () {
-    function HeroComponent() {
+var hero_detail_1 = require('../hero-detail');
+var shared_1 = require('./shared');
+var HeroListComponent = (function () {
+    function HeroListComponent() {
+        this.heroes = shared_1.HEROES;
+        this.selectedHero = undefined;
     }
-    HeroComponent = __decorate([
+    HeroListComponent.prototype.onSelect = function (hero) {
+        this.selectedHero = hero;
+    };
+    HeroListComponent.prototype.getSelectedClass = function (hero) {
+        return { 'selected': hero === this.selectedHero };
+    };
+    HeroListComponent = __decorate([
         core_1.Component({
-            selector: 'hero-component',
-            template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  ",
-            directives: [router_1.ROUTER_DIRECTIVES]
+            selector: 'hero-list',
+            templateUrl: 'app/hero/hero-list/hero-list.component.html',
+            styleUrls: ['app/hero/hero-list/hero-list.component.css'],
+            directives: [hero_detail_1.HeroDetail, router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeroComponent);
-    return HeroComponent;
+    ], HeroListComponent);
+    return HeroListComponent;
 }());
-exports.HeroComponent = HeroComponent;
+exports.HeroListComponent = HeroListComponent;
 
-//# sourceMappingURL=hero.js.map
+//# sourceMappingURL=hero-list.component.js.map

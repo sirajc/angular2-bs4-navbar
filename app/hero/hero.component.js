@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ContactComponent = (function () {
-    function ContactComponent() {
+var router_1 = require('@angular/router');
+var HeroComponent = (function () {
+    function HeroComponent() {
     }
-    ContactComponent = __decorate([
+    HeroComponent = __decorate([
         core_1.Component({
-            selector: 'contact',
-            template: '<div class="container-fluid">This is Contact Component</div>'
+            selector: 'hero-component',
+            template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  ",
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
-    ], ContactComponent);
-    return ContactComponent;
+    ], HeroComponent);
+    return HeroComponent;
 }());
-exports.ContactComponent = ContactComponent;
+exports.HeroComponent = HeroComponent;
 
-//# sourceMappingURL=contact.js.map
+//# sourceMappingURL=hero.component.js.map

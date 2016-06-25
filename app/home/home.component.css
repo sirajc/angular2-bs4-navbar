@@ -56,7 +56,7 @@ header .display-2 {
     text-align:center;
     background-position:center center;
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:30%;
     background-attachment:fixed!important;
     overflow:hidden;
 }
@@ -73,9 +73,9 @@ header .display-2 {
     padding: 0;
 }
 
-.footer .container {
-    padding-top: 60px;
-}
+/*.footer .container {
+    padding-top: 10px;
+}*/
 
 .footer p {
     color:#fff;
@@ -84,5 +84,5 @@ header .display-2 {
     font-weight:300;
     text-align:center;
     text-transform:uppercase;
-    margin-top: 50px;
+    margin-top: 30px;
 }

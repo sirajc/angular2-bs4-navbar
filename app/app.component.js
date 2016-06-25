@@ -10,30 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_detail_component_1 = require('./hero-detail.component');
-var heroes_const_1 = require('./heroes.const');
-var HeroesComponent = (function () {
-    function HeroesComponent() {
-        this.heroes = heroes_const_1.HEROES;
-        this.selectedHero = undefined;
+var navbar_1 = require('./navbar');
+var shared_1 = require('./shared');
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'Angular2 Bootstrap4 Navbar';
     }
-    HeroesComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
-    HeroesComponent.prototype.getSelectedClass = function (hero) {
-        return { 'selected': hero === this.selectedHero };
-    };
-    HeroesComponent = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            selector: 'heroes',
-            templateUrl: 'app/hero/heroes.component.html',
-            styleUrls: ['app/hero/heroes.component.css'],
-            directives: [hero_detail_component_1.HeroDetail, router_1.ROUTER_DIRECTIVES]
+            selector: 'my-app',
+            template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  ",
+            directives: [navbar_1.Navbar, router_1.ROUTER_DIRECTIVES],
+            providers: [shared_1.RouterService]
         }), 
         __metadata('design:paramtypes', [])
-    ], HeroesComponent);
-    return HeroesComponent;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
+exports.AppComponent = AppComponent;
 
-//# sourceMappingURL=heroes.component.js.map
+//# sourceMappingURL=app.component.js.map

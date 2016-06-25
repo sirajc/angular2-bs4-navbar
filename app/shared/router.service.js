@@ -10,12 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
-var hero_1 = require('../hero/hero');
-var home_1 = require('../home/home');
-var about_1 = require('../home/about/about');
-var contact_1 = require('../home/contact/contact');
-var router_metadata_1 = require('./router.metadata');
+var hero_1 = require('../hero');
 var hero_routes_1 = require('../hero/hero.routes');
+var home_1 = require('../home');
+var about_1 = require('../home/about');
+var contact_1 = require('../home/contact');
+var router_metadata_1 = require('./router.metadata');
 exports.ROUTES = [
     { path: '', component: home_1.HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: router_metadata_1.MenuType.BRAND },
     { path: 'heroes', component: hero_1.HeroComponent, title: "Heroes", menuType: router_metadata_1.MenuType.LEFT, children: hero_routes_1.HERO_ROUTES.slice() },

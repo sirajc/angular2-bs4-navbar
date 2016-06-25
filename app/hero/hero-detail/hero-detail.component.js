@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var heroes_const_1 = require('./heroes.const');
+var shared_1 = require('../hero-list/shared');
 var HeroDetail = (function () {
     function HeroDetail(current, router) {
         this.current = current;
@@ -25,7 +25,7 @@ var HeroDetail = (function () {
     };
     HeroDetail.prototype.getHero = function (_id) {
         var hero;
-        heroes_const_1.HEROES.forEach(function (element) {
+        shared_1.HEROES.forEach(function (element) {
             if (element.id === _id) {
                 hero = element;
             }
@@ -38,7 +38,7 @@ var HeroDetail = (function () {
     HeroDetail = __decorate([
         core_1.Component({
             selector: 'hero-detail',
-            templateUrl: 'app/hero/hero-detail.component.html',
+            templateUrl: 'app/hero/hero-detail/hero-detail.component.html',
             styles: ["\n    .hero-detail {\n      width: 300px;\n      margin-left: 20px;\n    }\n  "],
             inputs: ['hero'],
             directives: [router_1.ROUTER_DIRECTIVES]

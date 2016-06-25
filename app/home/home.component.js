@@ -16,8 +16,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',
-            templateUrl: 'app/home/home.html',
-            styleUrls: ['app/home/home.css'],
+            templateUrl: 'app/home/home.component.html',
+            styleUrls: ['app/home/home.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
@@ -26,4 +26,4 @@ var HomeComponent = (function () {
 }());
 exports.HomeComponent = HomeComponent;
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=home.component.js.map

@@ -12,4 +12,4 @@ exports.HEROES = [
     { "id": 20, "name": "Magneto" }
 ];
 
-//# sourceMappingURL=heroes.const.js.map
+//# sourceMappingURL=hero-list.constant.js.map
