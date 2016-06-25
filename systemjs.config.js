@@ -58,6 +58,9 @@
     //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
   });
 
+  // No umd for router yet
+  packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
+
   // Forms not on rc yet
   packages['@angular/forms'] = { main: 'index.js', defaultExtension: 'js' };
 
