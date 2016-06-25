@@ -5,7 +5,7 @@ import { MenuType, RouteInfo, RouterService } from '../shared';
 @Component({
   selector: 'navbar',
   properties: ['routes'],
-  templateUrl: 'app/navbar/navbar.html',
+  templateUrl: 'app/navbar/navbar.component.html',
   styles: [
     `
     .nav-link {
