@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MenuType, RouteInfo } from '../shared/router.metadata';
 import { RouterService } from '../shared/router.service';
@@ -16,11 +16,15 @@ import { RouterService } from '../shared/router.service';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class Navbar {
+export class Navbar implements OnInit {
   public menuItems: RouteInfo[];
 
   constructor(private routerService : RouterService ) {
-    this.menuItems = routerService.getRoutes();
+
+  }
+
+  ngOnInit() {
+    this.menuItems = this.routerService.getRoutes().filter(menuItem => menuItem.menuType != null);
   }
 
   public getMenuItemClasses(menuItem: RouteInfo) {

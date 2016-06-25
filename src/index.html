@@ -38,7 +38,8 @@
         'compiler',
         'core',
         'platform-browser',
-        'platform-browser-dynamic'
+        'platform-browser-dynamic',
+        'router'
       ];
 
       // Add package entries for angular packages
@@ -48,9 +49,6 @@
         // Individual files (~300 requests):
         //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
       });
-
-      // No umd for router yet
-      packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
 
       var config = {
         map: map,
