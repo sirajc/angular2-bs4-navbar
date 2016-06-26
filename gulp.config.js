@@ -5,17 +5,16 @@ module.exports = function () {
     /**
      * File paths
      */
-    src: client,
     build: './build/',
-    ghPages: './io-gh-pages/',
-    tsMaps: '.', // write map in same location as js
-    html: client + '**/*.html',
     css: client + '**/*.css',
-    ts: client + '**/*.ts',
+    html: client + '**/*.html',
     images: client + 'images/**/*.*',
     imagesRoot: 'images',
+    scss: client + '**/*.scss',
+    src: client,
+    ts: client + '**/*.ts',
+    tsMaps: '.', // write map in same location as js
 
-    defaultPort: '7203'
   };
 
   return config;

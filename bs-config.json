@@ -1,4 +1,5 @@
 {
+  "port": "8002",
   "server": {
     "baseDir": ["./", "./build"],
     "directory": true

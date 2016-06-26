@@ -9,10 +9,12 @@ A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for
 ##Steps to use
 1. Fork and clone this repository
 1. Run `npm install`
-1. Run `gulp` to start watching html, css and typescript changes
-1. Run `npm start` to start live-server with reload
+1. Run `npm run typings`, to install all the typing files
+1. Run `gulp` to start watching html, scss and typescript changes and do a first build
+1. On new termial run `npm start` to start lite-server with live reload support
 
 ##Angular2 Features
+1. Code is based on Angular2 RC3
 1. Components and Child Components
 1. App Routing and Child Component Routing
 1. Usage of Router Directives and functions like `routerLink` and `router.navigate`
@@ -42,10 +44,16 @@ Bootstrap Navbar and corresponding Angular routes are configured using one singl
 	- [ ] Get Menu and Route Configuration from HTTP instead of hardcoding
 	- [ ] Active class for Active Routes
 	- [ ] Support for Dropdown Menu
-- [ ] Move to SCSS
+- [X] Move to SCSS
+- [x] Image Compression
 - [ ] Tests
 
+## NOTE
+1. App runs on port 8001, configurable in bs-config.json under scripts
+1. lite-server uses browserSync and runs on port 3000, configurable in bs-config.json
+
 ##Contributing
+
 Create an issue on this repo if something is broken or if a feature is needed
 Feel Free to create a Pull Request if you fixed anything
 In case you want to add a feature, create an issue to disscuss the feature first

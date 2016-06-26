@@ -21,7 +21,10 @@
   <body>
     <my-app>Angular2 Bootstrap4 with Nav Bar... <br /><br /><br />Loading App</my-app>
     <script>
-      System.import('main');
+      System.import('main').catch(
+        function(err){
+          console.error(err);
+        });
     </script>
   </body>
 </html>

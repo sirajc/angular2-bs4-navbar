@@ -1,4 +1,6 @@
 node_modules
 .vscode
 build
+typings
 io-gh-pages
+npm-debug.log

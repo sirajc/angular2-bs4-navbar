@@ -2,9 +2,10 @@
   "name": "angular2-bs4-navbar",
   "version": "0.0.1",
   "description": "An Angular2 App with Bootstrap4 Navbar and routing using Angular2's Component Router",
-  "main": "bootstrap.js",
+  "main": "main.js",
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "typings": "typings install"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "@angular/platform-browser": "^2.0.0-rc.3",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.3",
     "@angular/router": "^3.0.0-alpha.8",
+    
     "bootstrap": "^4.0.0-alpha.2",
     "core-js": "^2.4.0",
     "ie-shim": "^0.1.0",
@@ -39,16 +41,20 @@
     "zone.js": "~0.6.12"
   },
   "devDependencies": {
-    "del": "^2.0.2",
+    "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-directory-sync": "^1.2.3",
+    "gulp-imagemin": "^2.4.0",
     "gulp-load-plugins": "^1.1.0",
+    "gulp-newer": "^1.1.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-run": "^1.6.11",
+    "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.4",
     "gulp-util": "^3.0.7",
     "lite-server": "^2.2.0",
-    "typescript": "^1.8.10"
+    "path": "^0.12.7",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
   }
 }

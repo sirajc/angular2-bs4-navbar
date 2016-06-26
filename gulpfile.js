@@ -1,6 +1,7 @@
 var config = require('./gulp.config')();
 var del = require('del');
 var gulp = require('gulp');
+var path = require('path');
 var $ = require('gulp-load-plugins')({lazy: true});
 
 var colors = $.util.colors;
@@ -12,20 +13,22 @@ var port = process.env.PORT || config.defaultPort;
  * @return {Stream}
  */
 gulp.task('styles', ['clean-styles'], function () {
-  log('Copying CSS to build');
+  log('Compiling SCSS to build');
 
   return gulp
-    .src(config.css)
+    .src(config.scss)
     .pipe($.plumber()) // exit gracefully if something fails after this
+    .pipe($.sass().on('error', $.sass.logError))
     .pipe(gulp.dest(config.build));
 });
 
-gulp.task('css-watcher', function () {
-  gulp.watch([config.css], ['styles']);
+gulp.task('scss-watcher', function () {
+  gulp.watch([config.scss], ['styles']);
 });
 
 /**
  * Copying Html to build
+ * TODO Add compression and other stuff for PROD
  * @return {Stream}
  */
 gulp.task('html', ['clean-html'], function () {
@@ -37,8 +40,27 @@ gulp.task('html', ['clean-html'], function () {
     .pipe(gulp.dest(config.build));
 });
 
+/**
+ * Copying Html to build
+ * @return {Stream}
+ */
+gulp.task('html-dev', function () {
+  log('Syncing Html to build');
+
+  return gulp
+    .src(config.html)
+    .pipe($.plumber()) // exit gracefully if something fails after this
+    .pipe($.newer(config.build))
+    .pipe(gulp.dest(config.build));
+});
+
 gulp.task('html-watcher', function () {
-  gulp.watch([config.html], ['html']);
+  var watcher = gulp.watch([config.html], ['html-dev']);
+  watcher.on('change', function(ev) {
+      if(ev.type === 'deleted') {
+          del(path.relative('./', ev.path).replace(config.src,config.build));
+      }
+  });
 });
 
 /**
@@ -86,6 +108,20 @@ gulp.task('image-watcher', function () {
   gulp.watch([config.images], ['images-dev']);
 });
 
+
+/**
+ * Compress images
+ * @return {Stream}
+ */
+gulp.task('images', ['clean-images'], function () {
+  log('Compressing and copying images');
+
+  return gulp
+    .src(config.images)
+    .pipe($.imagemin({optimizationLevel: 4}))
+    .pipe(gulp.dest(config.build + 'images'));
+});
+
 /**
  * Build everything
  */
@@ -103,7 +139,7 @@ gulp.task('build', ['styles', 'html', 'tsc', 'images-dev'], function () {
 /**
  * Watch for CSS and Html changes
  */
-gulp.task('default', ['build', 'css-watcher', 'html-watcher', 'ts-watcher', 'image-watcher'], function() {
+gulp.task('default', ['build', 'scss-watcher', 'html-watcher', 'ts-watcher', 'image-watcher'], function() {
   var msg = {
     title: 'gulp',
     subtitle: 'Watching for HTML, CSS and Typescript changes...'
@@ -166,27 +202,6 @@ function clean(path, done) {
       done();
   });
 }
-
-/**
- * Clean the files in io-gh-pages and write new ones
- * @param  {Function} done - callback when complete
- */
-gulp.task('gh-pages', function (done) {
-  var files = [].concat(
-    config.ghPages + 'app/**/*.js',
-    config.ghPages + 'app/**/*.html'
-    );
-  clean(files, done);
-
-  files = [].concat(
-    config.build + "app/**/*.js",
-    config.build + "app/**/*.html"
-  )
-
-  gulp.src(files)
-    .pipe(gulp.dest(config.ghPages+"app"))
-});
-
 
 /**
  * Log a message or series of messages using chalk's blue color.

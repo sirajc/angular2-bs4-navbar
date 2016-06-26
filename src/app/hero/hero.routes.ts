@@ -1,10 +1,9 @@
-import { Route } from '@angular/router';
+import { RouterConfig } from '@angular/router';
 
 import { HeroDetail } from './hero-detail';
 import { HeroListComponent } from './hero-list';
-import { RouteInfo } from '../shared/router.metadata';
 
-export const HERO_ROUTES: Route[] = [
+export const HERO_ROUTES: RouterConfig = [
   { path: '', component: HeroListComponent },
   { path: 'detail/:id', component: HeroDetail }
 ];
