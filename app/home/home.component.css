@@ -1,88 +1,78 @@
 .jumbotron-fluid {
-    padding:0;
-}
+  padding: 0; }
+
 header {
-  margin-top: -15px;
-}
-img{
-  width:100%;
+  margin-top: -15px; }
+
+img {
+  width: 100%;
   max-width: 100%;
-  height:auto;
-}
-.card-img-top{
-  width:100%;
-  height:auto;
-}
+  height: auto; }
+
+.card-img-top {
+  width: 100%;
+  height: auto; }
 
 #site-title {
-    max-width:150px;
-}
-#size-banner{
-    height:580px;
-    padding-top:60px;
-}
-header .display-2 {
-    font-size: 350%;
-    line-height:1;
-    font-weight:300;
-}
-.banner-tag-line {
-    font-size:150%;
-    line-height:1.4;
-    font-weight:300;
-}
+  max-width: 150px; }
 
-@media (min-width: 48em) { /* -md- and above */
-  #size-banner{
-      height:600px;
-      padding-top:150px;
-  }
+#size-banner {
+  height: 580px;
+  padding-top: 60px; }
+
+header .display-2 {
+  font-size: 350%;
+  line-height: 1;
+  font-weight: 300; }
+
+.banner-tag-line {
+  font-size: 150%;
+  line-height: 1.4;
+  font-weight: 300; }
+
+@media (min-width: 48em) {
+  /* -md- and above */
+  #size-banner {
+    height: 600px;
+    padding-top: 150px; }
   header .display-2 {
-    font-size: 400%;
-  }
+    font-size: 400%; }
   .banner-tag-line {
-    font-size:180%;
-}
-}
+    font-size: 180%; } }
+
 .btn-banner {
   font-weight: 600;
   color: #002157;
   border-color: #002157;
-  margin-right: 10px;
-}
+  margin-right: 10px; }
 
 /* ---------------------- PARALLAX --------------------------------------*/
 .parallax {
-    text-align:center;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:30%;
-    background-attachment:fixed!important;
-    overflow:hidden;
-}
+  text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-attachment: fixed !important;
+  overflow: hidden; }
 
 .parallax-pattern-overlay {
-    background-color: rgba(255,255,255,0.5);
-}
+  background-color: rgba(255, 255, 255, 0.5); }
 
 /* ----------------------- FOOTER ---------------------------------------*/
 .footer {
-    background:#363636;
-    margin-top:-30px;
-    position:relative;
-    padding: 0;
-}
+  background: #363636;
+  margin-top: -30px;
+  position: relative;
+  padding: 0; }
 
 /*.footer .container {
     padding-top: 10px;
 }*/
-
 .footer p {
-    color:#fff;
-    font-size:.9em;
-    line-height:24px;
-    font-weight:300;
-    text-align:center;
-    text-transform:uppercase;
-    margin-top: 30px;
-}
+  color: #fff;
+  font-size: .9em;
+  line-height: 24px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 30px; }
