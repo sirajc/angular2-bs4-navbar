@@ -5,6 +5,7 @@ import { Navbar } from './navbar';
 import { RouterService } from './shared';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
   template: `
     <navbar></navbar>

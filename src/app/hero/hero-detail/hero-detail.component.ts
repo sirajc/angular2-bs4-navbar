@@ -5,8 +5,9 @@ import { Hero } from '../hero.model';
 import { HEROES } from '../hero-list/shared';
 
 @Component({
+  moduleId: module.id,
   selector: 'hero-detail',
-  templateUrl: 'app/hero/hero-detail/hero-detail.component.html',
+  templateUrl: 'hero-detail.component.html',
   styles: [`
     .hero-detail {
       width: 300px;

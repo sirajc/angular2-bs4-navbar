@@ -5,9 +5,10 @@ import { HeroDetail } from '../hero-detail';
 import { HEROES } from './shared';
 
 @Component({
+  moduleId: module.id,
   selector: 'hero-list',
-  templateUrl: 'app/hero/hero-list/hero-list.component.html',
-  styleUrls: ['app/hero/hero-list/hero-list.component.css'],
+  templateUrl: 'hero-list.component.html',
+  styleUrls: ['hero-list.component.css'],
   directives: [HeroDetail, ROUTER_DIRECTIVES]
 })
 export class HeroListComponent {

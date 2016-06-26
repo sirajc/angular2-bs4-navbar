@@ -3,9 +3,10 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MenuType, RouteInfo, RouterService } from '../shared';
 
 @Component({
+  moduleId: module.id,
   selector: 'navbar',
   properties: ['routes'],
-  templateUrl: 'app/navbar/navbar.component.html',
+  templateUrl: 'navbar.component.html',
   styles: [
     `
     .nav-link {

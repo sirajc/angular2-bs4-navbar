@@ -4,6 +4,7 @@ import { HeroDetail } from './hero-detail';
 import { HeroListComponent } from './hero-list';
 
 @Component({
+  moduleId: module.id,
   selector:'hero-component',
   template: `
     <div class="container-fluid">
