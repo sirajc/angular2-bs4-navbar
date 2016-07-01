@@ -15,9 +15,10 @@ var HomeComponent = (function () {
     }
     HomeComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'home',
-            templateUrl: 'app/home/home.component.html',
-            styleUrls: ['app/home/home.component.css'],
+            templateUrl: 'home.component.html',
+            styleUrls: ['home.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])

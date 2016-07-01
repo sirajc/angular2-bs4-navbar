@@ -15,6 +15,7 @@ var HeroComponent = (function () {
     }
     HeroComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'hero-component',
             template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  ",
             directives: [router_1.ROUTER_DIRECTIVES]

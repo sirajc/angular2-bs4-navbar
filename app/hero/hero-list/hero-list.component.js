@@ -25,9 +25,10 @@ var HeroListComponent = (function () {
     };
     HeroListComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'hero-list',
-            templateUrl: 'app/hero/hero-list/hero-list.component.html',
-            styleUrls: ['app/hero/hero-list/hero-list.component.css'],
+            templateUrl: 'hero-list.component.html',
+            styleUrls: ['hero-list.component.css'],
             directives: [hero_detail_1.HeroDetail, router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])

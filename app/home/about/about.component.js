@@ -14,6 +14,7 @@ var AboutUsComponent = (function () {
     }
     AboutUsComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'about-us',
             template: '<div class="container-fluid">This is About Us Component</div>'
         }), 

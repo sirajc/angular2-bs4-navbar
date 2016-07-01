@@ -18,6 +18,7 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
             template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  ",
             directives: [navbar_1.Navbar, router_1.ROUTER_DIRECTIVES],

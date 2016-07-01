@@ -34,9 +34,10 @@ var Navbar = (function () {
     };
     Navbar = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'navbar',
             properties: ['routes'],
-            templateUrl: 'app/navbar/navbar.component.html',
+            templateUrl: 'navbar.component.html',
             styles: [
                 "\n    .nav-link {\n      color: #eee !important;\n    }\n    "
             ],

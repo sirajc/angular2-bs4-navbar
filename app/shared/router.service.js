@@ -17,7 +17,7 @@ var about_1 = require('../home/about');
 var contact_1 = require('../home/contact');
 var router_metadata_1 = require('./router.metadata');
 exports.ROUTES = [
-    { path: '', component: home_1.HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: router_metadata_1.MenuType.BRAND },
+    { path: '', pathMatch: 'full', component: home_1.HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: router_metadata_1.MenuType.BRAND },
     { path: 'heroes', component: hero_1.HeroComponent, title: "Heroes", menuType: router_metadata_1.MenuType.LEFT, children: hero_routes_1.HERO_ROUTES.slice() },
     { path: 'about', component: about_1.AboutUsComponent, title: "About Us", menuType: router_metadata_1.MenuType.RIGHT },
     { path: 'contact', component: contact_1.ContactComponent, title: "Contact", menuType: router_metadata_1.MenuType.RIGHT }
