@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { Route } from '@angular/router';
+import { Route, Data, ResolveData } from '@angular/router';
 
 export enum MenuType {
   BRAND,
@@ -9,12 +9,14 @@ export enum MenuType {
 
 export interface RouteInfo {
     path: string;
-    terminal?: boolean;
+    pathMatch?: 'full' | 'prefix';
     component: Type | string;
+    redirectTo?: string;
     outlet?: string;
     canActivate?: any[];
     canDeactivate?: any[];
-    redirectTo?: string;
+    data?: Data;
+    resolve?: ResolveData;
     children?: Route[];
     title: string;
     menuType: MenuType;

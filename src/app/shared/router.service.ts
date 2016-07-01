@@ -9,7 +9,7 @@ import { ContactComponent } from '../home/contact';
 import { RouteInfo, MenuType } from './router.metadata';
 
 export const ROUTES: RouteInfo[] = [
-  { path: '', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
+  { path: '', pathMatch: 'full', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
   { path: 'heroes', component: HeroComponent, title: "Heroes", menuType: MenuType.LEFT, children: [ ...HERO_ROUTES ] },
   { path: 'about', component: AboutUsComponent, title: "About Us", menuType: MenuType.RIGHT },
   { path: 'contact', component: ContactComponent, title: "Contact", menuType: MenuType.RIGHT }
