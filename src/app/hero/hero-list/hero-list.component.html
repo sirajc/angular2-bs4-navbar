@@ -1,7 +1,7 @@
 <ul class="list-group heroes">
   <li *ngFor="let hero of heroes" class="list-group-item"
     [ngClass]="getSelectedClass(hero)">
-      <span class="label label-default label-pill pull-left">{{hero.id}} </span>
+      <span class="tag tag-default tag-pill pull-left">{{hero.id}} </span>
       <a [routerLink]="['./detail', hero.id ]">{{hero.name}}</a>
   </li>
 </ul>

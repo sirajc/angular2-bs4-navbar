@@ -28,6 +28,6 @@ export class RouterService {
   }
 }
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(APP_ROUTES)
-];
+export const APP_COMPONENTS = [
+  HomeComponent, HeroComponent, AboutUsComponent, ContactComponent
+]

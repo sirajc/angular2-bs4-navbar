@@ -1,9 +1,9 @@
 #Angular2 Bootstrap4 Navbar
-An Angular2 App with Bootstrap4 Navbar and routing using Angular2's New New Router v3.alhpa7. Navbar menu is fully configurable in TS files.
+An Angular2 App with Bootstrap4 Navbar and routing using Angular2's New New Router v3.rc1. Navbar menu is fully configurable in TS files.
 Configuration is shared between Angular and Bootstrap Navbar
 
 ##Update
-A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for-routing-in.html) i.e. __router v3.0__ has been announced by Angular team. This project uses this
+RC5 is here. Currently booting `AppModule`_(NgModule)_. Will migrate all subcomponents to use `NgModule`
 
 [DEMO](http://sirajc.github.io/angular2-bs4-navbar)
 ##Steps to use
@@ -14,14 +14,15 @@ A [New new router](https://angularjs.blogspot.in/2016/06/improvements-coming-for
 1. On new termial run `npm start` to start lite-server with live reload support
 
 ##Angular2 Features
-1. Code is based on Angular2 RC3
+1. Usage of `NgModule` and configure routes using `RouterModule.forRoot(...)`
+1. Code is based on Angular2 RC5
 1. Components and Child Components
 1. App Routing and Child Component Routing
 1. Usage of Router Directives and functions like `routerLink` and `router.navigate`
 1. Usage of Angular directives like `ngClass`, `ngFor`, `ngStyle`
 
 ##Router and Navbar Configuration
-Bootstrap Navbar and corresponding Angular routes are configured using one single object in `app/routes.ts` file eg.
+Bootstrap Navbar and corresponding Angular routes are configured using one single object in `app/shared/router.service.ts` file eg.
 ```typescript
 		export const ROUTES: RouteInfo[] = [
 			{ path: '', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
@@ -37,6 +38,8 @@ Bootstrap Navbar and corresponding Angular routes are configured using one singl
 * `children` is an array Route, added using ES6 spread operator (...)
 
 ##TODO
+- [X] Create AppModule and boot using `bootstrapModule`
+- [ ] Move hero component and children to `NgModule`
 - [ ] Add Content in DEMO pages
 - [ ] Render Nav based on config similar to `dynamic-menu`
   - [X] Menu configuration should be controlled in TS file only

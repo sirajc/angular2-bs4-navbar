@@ -1,4 +1,4 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { AppComponent, APP_ROUTER_PROVIDERS } from './app';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app';
 
-bootstrap( AppComponent, [ APP_ROUTER_PROVIDERS ]);
+platformBrowserDynamic().bootstrapModule(AppModule).catch((error) => console.log("An error occured in bootsrap :", error));
