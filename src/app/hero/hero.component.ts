@@ -11,10 +11,8 @@ import { HeroListComponent } from './hero-list';
       <h2>Marvel Heroes</h2>
       <router-outlet></router-outlet>
     </div>
-  `,
-  directives: [ROUTER_DIRECTIVES]
+  `
 })
 export class HeroComponent {
 
 }
-

@@ -1,9 +1,4 @@
-import { Route, provideRouter, RouterConfig } from '@angular/router';
 import { Injectable } from '@angular/core';
-
-import { HomeModule } from '../home';
-
-import { HeroComponent } from '../hero';
 import { HERO_ROUTES } from '../hero/hero.routes';
 import { RouteInfo, MenuType } from './router.metadata';
 
@@ -14,14 +9,6 @@ export const ROUTES_BS4: RouteInfo[] = [
   { path: 'contact', title: "Contact", menuType: MenuType.RIGHT }
 ];
 
-export const ROUTES: Route[] = [
-  { path: 'heroes', component: HeroComponent, children: [ ...HERO_ROUTES ] }
-];
-
-export const APP_ROUTES: RouterConfig = [
-  ...ROUTES
-];
-
 @Injectable()
 export class RouterService {
   constructor() {}
@@ -30,7 +17,3 @@ export class RouterService {
     return ROUTES_BS4;
   }
 }
-
-export const APP_COMPONENTS = [
-  HeroComponent
-]

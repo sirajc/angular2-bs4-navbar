@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { Hero } from '../hero.model';
-import { HeroDetail } from '../hero-detail';
 import { HEROES } from './shared';
 
 @Component({
   moduleId: module.id,
   selector: 'hero-list',
   templateUrl: 'hero-list.component.html',
-  styleUrls: ['hero-list.component.css'],
-  directives: [HeroDetail, ROUTER_DIRECTIVES]
+  styleUrls: ['hero-list.component.css']
 })
 export class HeroListComponent {
   public heroes = HEROES;

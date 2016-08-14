@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Hero } from '../hero.model';
 import { HEROES } from '../hero-list/shared';
@@ -14,8 +14,7 @@ import { HEROES } from '../hero-list/shared';
       margin-left: 20px;
     }
   `],
-  inputs: ['hero'],
-  directives: [ROUTER_DIRECTIVES]
+  inputs: ['hero']
 })
 export class HeroDetail implements OnInit {
   public hero: Hero;
