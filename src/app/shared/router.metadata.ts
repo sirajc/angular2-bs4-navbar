@@ -9,15 +9,6 @@ export enum MenuType {
 
 export interface RouteInfo {
     path: string;
-    pathMatch?: 'full' | 'prefix';
-    component: Type | string;
-    redirectTo?: string;
-    outlet?: string;
-    canActivate?: any[];
-    canDeactivate?: any[];
-    data?: Data;
-    resolve?: ResolveData;
-    children?: Route[];
     title: string;
     menuType: MenuType;
 }

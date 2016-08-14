@@ -1,18 +1,21 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { Route, provideRouter, RouterConfig } from '@angular/router';
 import { Injectable } from '@angular/core';
+
+import { HomeModule } from '../home';
 
 import { HeroComponent } from '../hero';
 import { HERO_ROUTES } from '../hero/hero.routes';
-import { HomeComponent } from '../home';
-import { AboutUsComponent } from '../home/about';
-import { ContactComponent } from '../home/contact';
 import { RouteInfo, MenuType } from './router.metadata';
 
-export const ROUTES: RouteInfo[] = [
-  { path: '', pathMatch: 'full', component: HomeComponent, title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
-  { path: 'heroes', component: HeroComponent, title: "Heroes", menuType: MenuType.LEFT, children: [ ...HERO_ROUTES ] },
-  { path: 'about', component: AboutUsComponent, title: "About Us", menuType: MenuType.RIGHT },
-  { path: 'contact', component: ContactComponent, title: "Contact", menuType: MenuType.RIGHT }
+export const ROUTES_BS4: RouteInfo[] = [
+  { path: '', title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
+  { path: 'heroes', title: "Heroes", menuType: MenuType.LEFT },
+  { path: 'about', title: "About Us", menuType: MenuType.RIGHT },
+  { path: 'contact', title: "Contact", menuType: MenuType.RIGHT }
+];
+
+export const ROUTES: Route[] = [
+  { path: 'heroes', component: HeroComponent, children: [ ...HERO_ROUTES ] }
 ];
 
 export const APP_ROUTES: RouterConfig = [
@@ -24,10 +27,10 @@ export class RouterService {
   constructor() {}
 
   public getRoutes() : RouteInfo[] {
-    return ROUTES;
+    return ROUTES_BS4;
   }
 }
 
 export const APP_COMPONENTS = [
-  HomeComponent, HeroComponent, AboutUsComponent, ContactComponent
+  HeroComponent
 ]
