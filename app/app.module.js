@@ -9,25 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_metadata_1 = require('./router.metadata');
-exports.ROUTES_BS4 = [
-    { path: '', title: "Angular2 Bootstrap4 Navbar", menuType: router_metadata_1.MenuType.BRAND },
-    { path: 'heroes', title: "Heroes", menuType: router_metadata_1.MenuType.LEFT },
-    { path: 'about', title: "About Us", menuType: router_metadata_1.MenuType.RIGHT },
-    { path: 'contact', title: "Contact", menuType: router_metadata_1.MenuType.RIGHT }
-];
-var RouterService = (function () {
-    function RouterService() {
+var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
+var home_1 = require('./home');
+var hero_1 = require('./hero');
+var app_component_1 = require('./app.component');
+var AppModule = (function () {
+    function AppModule() {
     }
-    RouterService.prototype.getRoutes = function () {
-        return exports.ROUTES_BS4;
-    };
-    RouterService = __decorate([
-        core_1.Injectable(), 
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule, home_1.HomeModule, hero_1.HeroModule, router_1.RouterModule.forRoot([])],
+            declarations: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
+        }), 
         __metadata('design:paramtypes', [])
-    ], RouterService);
-    return RouterService;
+    ], AppModule);
+    return AppModule;
 }());
-exports.RouterService = RouterService;
+exports.AppModule = AppModule;
 
-//# sourceMappingURL=router.service.js.map
+//# sourceMappingURL=app.module.js.map

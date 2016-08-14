@@ -1,9 +1,10 @@
 .heroes {
   width: 300px; }
-
-.heroes li {
-  cursor: pointer;
-  transition: all 0.2s ease; }
-
-.heroes li:hover {
-  padding-left: 30px; }
+  .heroes li {
+    transition: all 0.2s ease; }
+    .heroes li span {
+      cursor: default; }
+    .heroes li a {
+      cursor: pointer; }
+  .heroes li:hover {
+    padding-left: 30px; }

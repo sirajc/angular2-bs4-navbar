@@ -9,8 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var hero_detail_1 = require('../hero-detail');
 var shared_1 = require('./shared');
 var HeroListComponent = (function () {
     function HeroListComponent() {
@@ -28,8 +26,7 @@ var HeroListComponent = (function () {
             moduleId: module.id,
             selector: 'hero-list',
             templateUrl: 'hero-list.component.html',
-            styleUrls: ['hero-list.component.css'],
-            directives: [hero_detail_1.HeroDetail, router_1.ROUTER_DIRECTIVES]
+            styleUrls: ['hero-list.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], HeroListComponent);

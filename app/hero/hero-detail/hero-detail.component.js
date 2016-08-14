@@ -41,8 +41,7 @@ var HeroDetail = (function () {
             selector: 'hero-detail',
             templateUrl: 'hero-detail.component.html',
             styles: ["\n    .hero-detail {\n      width: 300px;\n      margin-left: 20px;\n    }\n  "],
-            inputs: ['hero'],
-            directives: [router_1.ROUTER_DIRECTIVES]
+            inputs: ['hero']
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], HeroDetail);

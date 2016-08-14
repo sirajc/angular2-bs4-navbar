@@ -9,25 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_metadata_1 = require('./router.metadata');
-exports.ROUTES_BS4 = [
-    { path: '', title: "Angular2 Bootstrap4 Navbar", menuType: router_metadata_1.MenuType.BRAND },
-    { path: 'heroes', title: "Heroes", menuType: router_metadata_1.MenuType.LEFT },
-    { path: 'about', title: "About Us", menuType: router_metadata_1.MenuType.RIGHT },
-    { path: 'contact', title: "Contact", menuType: router_metadata_1.MenuType.RIGHT }
-];
-var RouterService = (function () {
-    function RouterService() {
+var common_1 = require('@angular/common');
+var router_1 = require('@angular/router');
+var hero_routes_1 = require('./hero.routes');
+var HeroModule = (function () {
+    function HeroModule() {
     }
-    RouterService.prototype.getRoutes = function () {
-        return exports.ROUTES_BS4;
-    };
-    RouterService = __decorate([
-        core_1.Injectable(), 
+    HeroModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule, router_1.RouterModule.forChild(hero_routes_1.MODULE_ROUTES)],
+            declarations: [hero_routes_1.MODULE_COMPONENTS]
+        }), 
         __metadata('design:paramtypes', [])
-    ], RouterService);
-    return RouterService;
+    ], HeroModule);
+    return HeroModule;
 }());
-exports.RouterService = RouterService;
+exports.HeroModule = HeroModule;
 
-//# sourceMappingURL=router.service.js.map
+//# sourceMappingURL=hero.module.js.map

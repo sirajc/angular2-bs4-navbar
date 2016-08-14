@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var HeroComponent = (function () {
     function HeroComponent() {
     }
@@ -17,8 +16,7 @@ var HeroComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'hero-component',
-            template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  ",
-            directives: [router_1.ROUTER_DIRECTIVES]
+            template: "\n    <div class=\"container-fluid\">\n      <h2>Marvel Heroes</h2>\n      <router-outlet></router-outlet>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], HeroComponent);
