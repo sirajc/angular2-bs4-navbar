@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HERO_ROUTES } from '../hero/hero.routes';
 import { RouteInfo, MenuType } from './router.metadata';
 
 export const ROUTES_BS4: RouteInfo[] = [
