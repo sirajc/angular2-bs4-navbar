@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES} from '@angular/router';
-
-import { Navbar } from './navbar';
-import { RouterService } from './shared';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +6,7 @@ import { RouterService } from './shared';
   template: `
     <navbar></navbar>
     <router-outlet></router-outlet>
-  `,
-  directives: [ Navbar, ROUTER_DIRECTIVES ],
-  providers: [ RouterService ]
+  `
 
 })
 export class AppComponent {

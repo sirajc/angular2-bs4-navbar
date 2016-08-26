@@ -42,7 +42,6 @@ const barrels: string[] = [
 
   // App specific barrels.
   'app',
-  'app/shared',
   'app/navbar',
   'app/home',
   'app/home/about',
@@ -50,7 +49,7 @@ const barrels: string[] = [
   'app/hero',
   'app/hero/hero-list',
   'app/hero/hero-list/shared',
-  'app/hero/hero-detail',
+  'app/hero/hero-detail'
 ];
 
 barrels.forEach((barrelName: string) => {

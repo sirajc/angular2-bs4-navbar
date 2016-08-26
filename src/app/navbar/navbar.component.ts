@@ -1,45 +1,32 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import { MenuType, RouteInfo, RouterService } from '../shared';
+import { Component, OnInit } from '@angular/core';
+import { ROUTES } from './navbar-routes.config';
+import { MenuType } from './navbar.metadata';
 
 @Component({
   moduleId: module.id,
   selector: 'navbar',
-  properties: ['routes'],
   templateUrl: 'navbar.component.html',
-  styles: [
-    `
-    .nav-link {
-      color: #eee !important;
-    }
-    `
-  ],
-  directives: [ROUTER_DIRECTIVES]
+  styleUrls: [ 'navbar.component.css' ]
 })
-export class Navbar implements OnInit {
-  public menuItems: RouteInfo[];
+export class NavbarComponent implements OnInit {
+  public menuItems: any[];
+  public brandMenu: any;
+  isCollapsed = true;
 
-  constructor(private routerService : RouterService ) {
-
-  }
+  constructor() {}
 
   ngOnInit() {
-    this.menuItems = this.routerService.getRoutes().filter(menuItem => menuItem.menuType != null);
+    this.menuItems = ROUTES.filter(menuItem => menuItem.menuType !== MenuType.BRAND);
+    this.brandMenu = ROUTES.filter(menuItem => menuItem.menuType === MenuType.BRAND)[0];
   }
 
-  public getMenuItemClasses(menuItem: RouteInfo) {
-    let menuItemClass = {
-      "nav-item": menuItem.menuType === MenuType.LEFT || menuItem.menuType === MenuType.RIGHT,
-      "pull-xs-right": menuItem.menuType === MenuType.RIGHT
-    }
-    return menuItemClass;
+  public get menuIcon(): string {
+    return this.isCollapsed ? '☰' : '✖';
   }
 
-  public getMenuItemAnchorClasses(menuItem: RouteInfo) {
-    let menuItemAnchorClass = {
-      "navbar-brand": menuItem.menuType === MenuType.BRAND,
-      "nav-link": menuItem.menuType === MenuType.LEFT || menuItem.menuType === MenuType.RIGHT
-    }
-    return menuItemAnchorClass;
+  public getMenuItemClasses(menuItem: any) {
+    return {
+      'pull-xs-right': this.isCollapsed && menuItem.menuType === MenuType.RIGHT
+    };
   }
 }
