@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Angular2 Bootstrap4 Navbar';
+var common_1 = require('@angular/common');
+var router_1 = require('@angular/router');
+var navbar_component_1 = require('./navbar.component');
+var NavbarModule = (function () {
+    function NavbarModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  "
+    NavbarModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule, common_1.CommonModule],
+            declarations: [navbar_component_1.NavbarComponent],
+            exports: [navbar_component_1.NavbarComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], NavbarModule);
+    return NavbarModule;
 }());
-exports.AppComponent = AppComponent;
+exports.NavbarModule = NavbarModule;
 
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=navbar.module.js.map

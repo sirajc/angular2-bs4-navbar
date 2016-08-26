@@ -68,7 +68,6 @@
     // Thirdparty barrels.
     // App specific barrels.
     'app',
-    'app/shared',
     'app/navbar',
     'app/home',
     'app/home/about',
@@ -76,7 +75,7 @@
     'app/hero',
     'app/hero/hero-list',
     'app/hero/hero-list/shared',
-    'app/hero/hero-detail',
+    'app/hero/hero-detail'
   ];
   barrels.forEach(function (barrelName) {
       packages[barrelName] = { main: 'index', defaultExtension: 'js' };

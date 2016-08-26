@@ -9,15 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var navbar_routes_config_1 = require('./navbar-routes.config');
-var navbar_metadata_1 = require('./navbar.metadata');
+(function (MenuType) {
+    MenuType[MenuType["BRAND"] = 0] = "BRAND";
+    MenuType[MenuType["LEFT"] = 1] = "LEFT";
+    MenuType[MenuType["RIGHT"] = 2] = "RIGHT";
+})(exports.MenuType || (exports.MenuType = {}));
+var MenuType = exports.MenuType;
+exports.ROUTES = [
+    { path: '', title: "Angular2 Bootstrap4 Navbar", menuType: MenuType.BRAND },
+    { path: 'heroes', title: "Heroes", menuType: MenuType.LEFT },
+    { path: 'about', title: "About Us", menuType: MenuType.RIGHT },
+    { path: 'contact', title: "Contact", menuType: MenuType.RIGHT }
+];
 var NavbarComponent = (function () {
     function NavbarComponent() {
         this.isCollapsed = true;
     }
     NavbarComponent.prototype.ngOnInit = function () {
-        this.menuItems = navbar_routes_config_1.ROUTES.filter(function (menuItem) { return menuItem.menuType !== navbar_metadata_1.MenuType.BRAND; });
-        this.brandMenu = navbar_routes_config_1.ROUTES.filter(function (menuItem) { return menuItem.menuType === navbar_metadata_1.MenuType.BRAND; })[0];
+        this.menuItems = exports.ROUTES.filter(function (menuItem) { return menuItem.menuType !== MenuType.BRAND; });
+        this.brandMenu = exports.ROUTES.filter(function (menuItem) { return menuItem.menuType === MenuType.BRAND; })[0];
     };
     Object.defineProperty(NavbarComponent.prototype, "menuIcon", {
         get: function () {
@@ -28,7 +38,7 @@ var NavbarComponent = (function () {
     });
     NavbarComponent.prototype.getMenuItemClasses = function (menuItem) {
         return {
-            'pull-xs-right': this.isCollapsed && menuItem.menuType === navbar_metadata_1.MenuType.RIGHT
+            'pull-xs-right': menuItem.menuType === MenuType.RIGHT
         };
     };
     NavbarComponent = __decorate([
