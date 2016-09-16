@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HeroDetail } from './hero-detail';
 import { HeroListComponent } from './hero-list';
 
