@@ -1,12 +1,12 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
   <div class="clearfix">
     <button (click)="isCollapsed = !isCollapsed"
-      class="navbar-toggler pull-xs-right hidden-sm-up" type="button"
+      class="navbar-toggler pull-xs-right" type="button"
       aria-controls="bd-main-nav"
       aria-label="Toggle navigation">
         {{menuIcon}}
     </button>
-    <a (click)="isCollapsed = true" class="navbar-brand hidden-sm-up" [routerLink]="[brandMenu.path]">
+    <a (click)="isCollapsed = true" class="navbar-brand" [routerLink]="[brandMenu.path]">
       {{brandMenu.title}}
     </a>
   </div>
@@ -14,7 +14,7 @@
   [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}">
     <ul class="nav navbar-nav">
       <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
-        <a class="navbar-brand hidden-xs-down" [routerLink]="[brandMenu.path]">{{brandMenu.title}}</a>
+        <a class="navbar-brand" [routerLink]="[brandMenu.path]">{{brandMenu.title}}</a>
       </li>
       <li (click)="isCollapsed = true" *ngFor="let menuItem of menuItems"
         class="nav-item" routerLinkActive="active"
